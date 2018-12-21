@@ -30,7 +30,7 @@
 				</form>
 				<li class="nav-item"><a class="nav-link" href="#">Người tìm
 						việc</a></li>
-				<li class="nav-item"><a class="nav-link" href="vieclam">Việc
+				<li class="nav-item"><a class="nav-link" href="vieclam.jsp">Việc
 						tìm người</a></li>
 				<li class="nav-item"><a class="nav-link" href="#"> Tạo hồ
 						sơ </a></li>						

@@ -1,4 +1,6 @@
-
+<%@page import="model.TinTuc"%>
+<%@page import="java.util.List"%>
+<%@page import="dao.TinTucDAO"%>
 <%@ page session="false" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
     
@@ -22,7 +24,7 @@
    
   </head>
 
-  <body ng-app="demo1" ng-controller="Hello1" style="margin-top:15px">
+  <body  style="margin-top:15px">
 
 <%@ include file="header.jsp"%>
   <!-- Navigation -->
@@ -45,21 +47,31 @@
 <div class="row">
 
 		<table class="col-lg-8" >
+			<%
+                                 List<TinTuc>  list =  new TinTucDAO().tatCaTinTuc();
+                                for(TinTuc tintuc : list){
+                                     
+                                
+                                    %>
 		
 		<tr  class="card mb-4" ng-repeat="x in tintuc">
 			  
               <td class="media mt-4" style="height:110px;">
-                <img style="width: 80px; height:80px; margin-left:20px" src="{{x.thumbnail}}" alt="">
+                <img style="width: 80px; height:80px; margin-left:20px" src="<%=tintuc.getThumbnail() %>" alt="">
                 <div class="media-body">
-                  <a href="#"><h6 class="mt-0">{{x.tieude}}</h6></a>
-                  <p>{{x.noidungvantat}}</p>
-                  <p>{{x.ngaypost| date : 'medium'}}</p>
+                  <a style="margin-left:30px" href="#"><h6 class="mt-0"><%=tintuc.getTieuDe() %></h6></a>
+                  <p style="margin-left:10px">  <%=tintuc.getNoiDungVanTat() %></p>
+                  <p style="margin-left:10px"> Ngày đăng: <%=tintuc.getNgayPost() %></p>
                 </div>
               </td>
               
 			  
               
 			</tr>
+			
+				<%
+                                    }
+                                    %>
 
 		</table>
 	
@@ -107,19 +119,7 @@
     <!-- /.container -->
   </footer>
 <script>
-	var app= angular.module('demo1', ['ngResource']);
-	   app.controller('Hello1', ['$scope', '$resource',function($scope,$resource,Tintuc) {  
-		   function fetchAllPersons(){
-		        $scope.tintuc = $resource('http://localhost:8080/Test1/rest/alltintuc'
-		        ).query(function(data){return data;});
-		    };
-		    fetchAllPersons();
-		    
-		   
-	       
-	       
-	       
-	   }]);
+
 	</script>
   <!-- Bootstrap core JavaScript -->
   <script src="vendor/jquery/jquery.min.js"></script>

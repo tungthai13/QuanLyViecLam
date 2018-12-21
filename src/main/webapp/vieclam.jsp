@@ -1,3 +1,6 @@
+<%@page import="model.ViecLam"%>
+<%@page import="java.util.List"%>
+<%@page import="dao.ViecLamDAO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 
 	pageEncoding="UTF-8"%>
@@ -25,7 +28,7 @@
 </head>
 
 
-<body ng-app="demo1" ng-controller="Hello1" style="margin-top: 20px">
+<body style="margin-top: 20px">
 
 	<%@ include file="header.jsp"%>
 
@@ -42,19 +45,30 @@
 		<div>
 
 			<table class="table">
-				<tbody ng-repeat="x in vieclam">
+				<tbody>
+				
+				<%
+                                 List<ViecLam>  list =  new ViecLamDAO().tatCaViecLam();
+                                for(ViecLam vieclam : list){
+                                     
+                                
+                                    %>
 					<tr>
 						<td style="width: 20px"><img
-							style="width: 80px; height: 70px" src="	{{x.thumbnail}}" /></td>
-						<td> <a href="<c:url value='/chitietvieclam/{{x.idvieclam}}' />" >{{x.tieude}}</a>
+							style="width: 80px; height: 70px" src="<%=vieclam.getThumbnail() %>" /></td>
+						<td> <a href="#" ><%=vieclam.getTieuDe() %></a>
 							<p>
-								<b>Tên công ty: {{x.tencongty}}</b>
+								<b>Tên công ty: <%=vieclam.getTenCongTy() %></b>
 							</p></td>
-						<td><b>Mức lương: {{x.mucluong}}</b>
+						<td><b>Mức lương: <%=vieclam.getMucLuong() %></b>
 							<p>
-								<b>Địa chỉ: {{x.diachi}}</b>
+								<b>Địa chỉ: <%=vieclam.getDiaChi() %></b>
 							</p></td>
+							
 					</tr>
+					<%
+                                    }
+                                    %>
 
 				</tbody>
 			</table>
@@ -82,42 +96,7 @@
 
 
 	<script>
-		var app = angular.module('demo1', [ 'ngResource' ]);
-		app.controller('Hello1', [
-				'$scope',
-				'$resource',
-				function($scope, $resource, Vieclam) {
-					function allvieclam() {
-						$scope.vieclam = $resource(
-								'http://localhost:8080/Test1/rest/allvieclam')
-								.query(function(data) {
-									return data;
-								});
-					}
-					;
-
-					allvieclam();
-					
-				/* 	$scope.getvieclam = function(){
-						Vieclam = $resource(
-								"http://localhost:8080/Test1/rest/getvieclam/{idvieclam}",
-								{},
-								{
-									save : {
-										method : 'GET',
-										params : {
-											idvieclam : '@idvieclam'
-										}
-									}
-								});
-						window.localStorage.setItem("Vieclam", JSON.stringify(Vieclam));
-						window.location = "http://localhost:8080/Test1/chitietvieclam/{idvieclam}";
-						
-					}; */
-					
-					
-					
-				} ]);
+		
 	</script>
 </body>
 
