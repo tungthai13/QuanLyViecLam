@@ -2,7 +2,7 @@ package model;
 
 import java.sql.Date;
 
-public class HoSoUngTuyen {
+public class HoSo {
 
 	private int idHoSo;
 	private String hoTen;
@@ -14,11 +14,11 @@ public class HoSoUngTuyen {
 	private int idUser;
 	private int idViecLam;
 	
-	public HoSoUngTuyen() {
+	public HoSo() {
 		
 	}
 
-	public HoSoUngTuyen(int idHoSo, String hoTen, Date ngaySinh, String email, int sdt, String cv,
+	public HoSo(int idHoSo, String hoTen, Date ngaySinh, String email, int sdt, String cv,
 			String noiDungUngTuyen, int idUser, int idViecLam) {
 		this.idHoSo = idHoSo;
 		this.hoTen = hoTen;

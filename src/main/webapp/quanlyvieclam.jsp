@@ -1,224 +1,134 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<html>
+
+<%@page import="dao.ViecLamDAO"%>
+<%@page import="model.ViecLam"%>
+<%@page import="java.util.List"%>
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html lang="en">
 
 <head>
-<meta charset="utf-8">
-<title>Quản lý việc làm</title>
 
-<script
-	src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
-<script
-	src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-resource.min.js"></script>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Quản lý việc làm</title>
+    
+ 
+     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
 
-<link href="resources/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="vendor/metisMenu/metisMenu.min.css" rel="stylesheet">
 
-<link href="resources/css/styles.css" rel="stylesheet">
+   
+    <link href="vendor/datatables-plugins/dataTables.bootstrap.css" rel="stylesheet">
+
+
+    <link href="vendor/datatables-responsive/dataTables.responsive.css" rel="stylesheet">
+
+  
+    <link href="dist/css/sb-admin-2.css" rel="stylesheet">
+
+  
+    <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css"> 
+
+   
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+   
 
 </head>
 
-<body ng-app="demo1" ng-controller="Hello1">
+<body>
 
-	<%@include file="dashbar.jsp"%>
-
-	<div class="col-md-10">
-		<div>
-			<h1>Quản lý việc làm</h1>
-		</div>
-		<button style="margin-top: 20px; width: 60px; height: 40px"
-			class="btn btn-info">
-			<i class="glyphicon glyphicon-refresh"></i> Refresh
-		</button>
-		
-		<button style="margin-top: 20px; width: 120px; height: 40px;margin-left:20px;"
-			class="btn btn-info">
-			<a href="themvieclam" style="color:white" ><i class="glyphicon glyphicon-refresh"></i> Thêm việc làm</a>
-		</button>
-		
-			<div style="margin-top: 20px;"panel-body">
-				<table cellpadding="0" cellspacing="0" border="0"
-					class="table table-striped table-bordered" id="example">
-					
-					<thead>
-						<tr>
-<form name="personForm" ng-submit="update()">
-							<th>
-								<div class="form-group">
-									<label>ID</label> <input class="form-control" ng-model="id"
-										placeholder="ID" type="text" ng-disabled="!edit" required>
-									<span
-										ng-show="personForm.id.$touched && personForm.id.$invalid">The
-										name is required.</span>
-								</div>
-
-							</th>
-							<th><div class="form-group">
-									<label>Tiêu đề</label> <input class="form-control"
-										placeholder="Tiêu đề" type="text" ng-model="tieude">
-								</div></th>
-							<th><div class="form-group">
-									<label>Ten công ty</label> <input class="form-control"
-										placeholder="Tên công ty" type="text" ng-model="tencongty">
-
-								</div></th>
-							<th><div class="form-group">
-									<label>Ảnh</label> <input class="form-control"
-										placeholder="Ảnh" type="text" ng-model="thumbnail">
-								</div></th>
-							<th><div class="form-group">
-									<label>Địa chỉ</label> <input class="form-control"
-										placeholder="Địa chỉ" type="text" ng-model="diachi">
-								</div></th>
-							<th><div class="form-group">
-									<label>Mức lương</label> <input class="form-control"
-										placeholder="Mức lương" type="text" ng-model="mucluong">
-								</div></th>
-							<th><div class="form-group">
-									<label>Mô tả</label>
-									<textarea class="form-control" placeholder="Mô tả" rows="3"
-										ng-model="mota"></textarea>
-								</div></th>
-							<th><button class="btn btn-primary">
-									<i class="glyphicon glyphicon-pencil"></i> Edit
-								</button></th>
-							<th>Xóa</th>
-
-							</form>
+    <div id="wrapper">
 
 
-						</tr>
-					</thead>
-					<tbody>
-						<tr ng-repeat="x in vieclam">
-							<td>{{x.idvieclam}}</td>
-							<td>{{x.tieude}}</td>
-							<td>{{x.tencongty}}</td>
-							<td>{{x.thumbnail}}</td>
-							<td>{{x.diachi}}</td>
-							<td>{{x.mucluong}}</td>
-							<td>{{x.mota}}</td>
-							<td><button class="btn btn-info btn-sm"
-									ng-click="editt(x.idvieclam,x.tieude,x.tencongty,x.diachi,x.mucluong,x.mota)">Sửa</button></td>
-							<td><button class="btn btn-info btn-sm"
-									ng-click="deletet(x.idvieclam)">Xóa</button></td>
+        <%@include file="nav.jsp" %>
 
-						</tr>
-					</tbody>
-				</table>
-			</div>
-	</div>
+        <div id="page-wrapper">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h1 class="page-header">Việc làm</h1>
+                </div>
+                <!-- /.col-lg-12 -->
+            </div>
+            <!-- /.row -->
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="panel panel-default">
+                        <div class="panel-body">
+                            
+                            <table width="100%" class="table table-striped table-bordered table-hover" id="dataTables-example">
+                                <thead>
+                                    <tr>
+                                        <th>Mã việc làm</th>
+                                        <th>Ảnh</th>
+                                        <th>Tiêu đề</th>
+                                        
+                                        <th>Tên công ty</th>
+                                        <th>Địa chỉ </th>
+                                        <th>Mức lương</th>
+                                        <th>Mô tả</th>
+                                        <th>Sửa</th>
+                                        <th>Xóa</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                 <%
+                                 List<ViecLam>  list =  new ViecLamDAO().tatCaViecLam();
+                                for(ViecLam vieclam : list){
+                                     
+                                
+                                    %>
+                                    <tr class="odd gradeX">
+                                        <td><%=vieclam.getIdViecLam()%></td>
+                                        <td><%=vieclam.getThumbnail()%></td>
+                                        <td><%=vieclam.getTieuDe()%></td>
+                                        <td><%=vieclam.getTenCongTy() %></td>
+                                       	<td><%=vieclam.getDiaChi() %></td>
+                                        <td><%=vieclam.getMucLuong() %></td>
+                                       	<td><%=vieclam.getMoTa() %></td>
+										<td><a href="#">Sửa</a></td>
+                                        <td><a href="#">Xóa</a></td>
+                                    </tr>
+                                    <%
+                                    }
+                                    %>
+                                   
+                                </tbody>
+                            </table>
+                            <!-- /.table-responsive -->
+                            <a class="btn btn-primary" href="#">Thêm việc làm mới</a>
+                             
+                            
+    </div>
+ 
 
-	<br>
+  
+    <script src="vendor/jquery/jquery.min.js"></script>
 
+   
+    <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
 
-	<div style="margin: 50px auto">
-		<ul class="pagination justify-content-center">
-			<li class="page-item"><a class="page-link" href="#"
-				aria-label="Previous"> <span aria-hidden="true">&laquo;</span> <span
-					class="sr-only">Previous</span>
-			</a></li>
-			<li class="page-item"><a class="page-link" href="#">1</a></li>
-			<li class="page-item"><a class="page-link" href="#">2</a></li>
-			<li class="page-item"><a class="page-link" href="#">3</a></li>
-			<li class="page-item"><a class="page-link" href="#">4</a></li>
-			<li class="page-item"><a class="page-link" href="#">5</a></li>
-			<li class="page-item"><a class="page-link" href="#"
-				aria-label="Next"> <span aria-hidden="true">&raquo;</span> <span
-					class="sr-only">Next</span>
-			</a></li>
-		</ul>
-	</div>
+  
+    <script src="vendor/metisMenu/metisMenu.min.js"></script>
 
+   
+    <script src="vendor/datatables/js/jquery.dataTables.min.js"></script>
+    <script src="vendor/datatables-plugins/dataTables.bootstrap.min.js"></script>
+    <script src="vendor/datatables-responsive/dataTables.responsive.js"></script>
 
+   
+    <script src="dist/js/sb-admin-2.js"></script>
 
-
-
-	<script>
-		var app = angular.module('demo1', [ 'ngResource' ]);
-		app
-				.controller(
-						'Hello1',
-						[
-								'$scope',
-								'$resource',
-								function($scope, $resource, Vieclam) {
-									function allvieclam() {
-										$scope.vieclam = $resource(
-												'http://localhost:8080/Test1/rest/allvieclam')
-												.query(function(data) {
-													return data;
-												});
-									}
-									;
-
-									allvieclam();
-
-									$scope.update = function() {
-										Vieclam = $resource(
-												"http://localhost:8080/Test1/rest/updatevieclam/:idvieclam",
-												{},
-												{
-													save : {
-														method : 'PUT',
-														params : {
-															idvieclam : '@idvieclam'
-														}
-													}
-												});
-										var vieclam = {};
-
-										vieclam.idvieclam = $scope.id;
-										vieclam.tieude = $scope.tieude;
-										vieclam.tencongty = $scope.tencongty;
-										vieclam.thumbnail = $scope.thumbnail;
-										vieclam.diachi = $scope.diachi;
-										vieclam.mucluong = $scope.mucluong;
-										vieclam.mota = $scope.mota;
-										Vieclam.save({idvieclam:$scope.id},vieclam);
-										window.location = "http://localhost:8080/Test1/quanlyvieclam";
-									};
-
-									$scope.editt = function(idvieclam, tieude,
-											tencongty, diachi, mucluong, mota) {
-										$scope.id = (idvieclam);
-										$scope.tieude = (tieude);
-										$scope.tencongty = (tencongty);
-										$scope.diachi = (diachi);
-										$scope.mucluong = (mucluong);
-										$scope.mota = (mota);
-
-									};
-									
-									$scope.deletet = function(idvieclam) {
-										$scope.id = (idvieclam);
-										Vieclam = $resource(
-												"http://localhost:8080/Test1/ddelete/:idvieclam",
-												{},
-												{
-													delete1 : {
-														method : 'DELETE',
-														params : {
-															idvieclam : '@idvieclam'
-														}
-													}
-												});
-										var vieclam = {};
-
-										vieclam.idvieclam = $scope.id;
-										Vieclam.delete1({
-											idvieclam : $scope.id
-										}, vieclam);
-										window.location = "http://localhost:8080/Test1/quanlyvieclam";
-									};
-
-									
-								} ]);
-	</script>
+   
+    <script>
+  
+    </script>
 
 </body>
-
-
 
 </html>
