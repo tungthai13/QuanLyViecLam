@@ -31,9 +31,11 @@ Connection con;
 				hoso.setNgaySinh(rs.getDate("ngaySinh"));
 				hoso.setEmail(rs.getString("email"));
 				hoso.setSdt(rs.getInt("sdt"));
-				hoso.setMucLuong(rs.getString("mucLuong"));
-				hoso.setMoTa(rs.getString("moTa"));
-				list.add(vieclam);
+				hoso.setCv(rs.getString("cv"));
+				hoso.setNoiDungUngTuyen(rs.getString("noiDungUngTuyen"));
+				hoso.setIdUser(rs.getInt("idUser"));
+				hoso.setIdViecLam(rs.getInt("idViecLam"));
+				list.add(hoso);
 			}
 			
 			return list;
@@ -43,4 +45,5 @@ Connection con;
 		}
 		
 		return null;
+}
 }

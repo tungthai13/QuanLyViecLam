@@ -1,5 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+	<%@page import="model.ViecLam"%>
+<%@page import="java.util.List"%>
+<%@page import="dao.ViecLamDAO"%>
+<%@page import="dao.TinTucDAO"%>
+<%@page import="model.TinTuc"%>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <html lang="en">
 
@@ -89,6 +94,8 @@
 
 	<div class="container">
 
+	
+
 		<h1 class="my-4">Chào mừng đến với Smartweb</h1>
 
 
@@ -98,12 +105,17 @@
 					<h4 class="card-header">Danh sách việc làm mới</h4>
 					
 					<div class="card-body">
-						<p class="card-text" ng-repeat="x in vieclam">
-							<a href="chitietvieclam.jsp">{{x.tieude}}</a>
+					<%
+					List<ViecLam>  list =  new ViecLamDAO().top8ViecLam();
+					 for(ViecLam vieclam : list){
+	%>
+						<p class="card-text">
+							<a href="chitietvieclam?id=<%=vieclam.getIdViecLam() %>"><%=vieclam.getTieuDe()%></a>
 						</p>
+						<%} %>
 					</div>
 					<div class="card-footer">
-						<a href="vieclam.jsp" class="btn btn-primary">Learn More</a>
+						<a href="vieclam.jsp" class="btn btn-primary">Xem thêm</a>
 					</div>
 				</div>
 			</div>
@@ -111,12 +123,18 @@
 				<div class="card h-50">
 					<h4 class="card-header">Danh sách tin tức mới</h4>
 					<div class="card-body">
-						<p class="card-text" ng-repeat="x in tintuc">
-							<a href="">{{x.tieude}}</a>
+					<%
+					List<TinTuc>  list1 =  new TinTucDAO().top8TinTuc();
+					 for(TinTuc tintuc : list1){
+					%>
+					
+						<p class="card-text">
+							<a href="chitiettintuc?id=<%=tintuc.getIdTinTuc() %>"><%=tintuc.getTieuDe() %></a>
 						</p>
+						<%} %>
 					</div>
 					<div class="card-footer">
-						<a href="#" class="btn btn-primary">Learn More</a>
+						<a href="tintuc.jsp" class="btn btn-primary">Learn More</a>
 					</div>
 				</div>
 			</div>

@@ -1,132 +1,131 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<html>
 
-<head>
-<meta charset="utf-8">
-<title>Thêm việc làm</title>
+<%@page import="model.ViecLam"%>
+<%@page import="java.util.List"%>
+<%@page import="dao.ViecLamDAO"%>
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html lang="en">
 
-<link rel="stylesheet"
-	href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
-	integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
-	crossorigin="anonymous">
+    <head>
 
-<script
-	src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
-<script
-	src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-resource.min.js"></script>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="">
+        <meta name="author" content="">
 
-</head>
-<body ng-app="demo1" ng-controller="Hello1">
-	<%@include file="header.jsp"%>
+        <title>Them việc làm</title>
 
-	<form style="margin-top: 50px; margin-left: 150px;" name="personForm" ng-submit="create()">
-		<div class="col-md-10">
-			<div class="panel-title">
-				<h1>Thêm việc làm</h1>
-			</div>
+        <!-- Bootstrap Core CSS -->
+        <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
-			<div style="margin-top: 40px" class="panel-body">
-				<form>
-					<fieldset class="col-sm-6">
+        <!-- MetisMenu CSS -->
+        <link href="vendor/metisMenu/metisMenu.min.css" rel="stylesheet">
 
-						<div class="form-group">
-							<label>Tiêu đề</label> <input class="form-control"
-								placeholder="Tiêu đề" type="text" ng-model="tieude">
-						</div>
-						<div class="form-group">
-							<label>Ten công ty</label> <input class="form-control"
-								placeholder="Tên công ty" type="text" ng-model="tencongty">
+        <!-- Custom CSS -->
+        <link href="dist/css/sb-admin-2.css" rel="stylesheet">
 
-						</div>
+        <!-- Custom Fonts -->
+        <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 
-						<div class="form-group">
-							<label>Địa chỉ</label> <input class="form-control"
-								placeholder="Địa chỉ" type="text" ng-model="diachi">
-						</div>
-						<div class="form-group">
-							<label>Mức lương</label> <input class="form-control"
-								placeholder="Mức lương" type="text" ng-model="mucluong">
-						</div>
+ 
+    </head>
 
-						<div class="form-group">
-							<label>Mô tả</label>
-							<textarea class="form-control" placeholder="Mô tả" rows="3"
-								ng-model="mota"></textarea>
-						</div>
-						<div class="form-group">
-							<label>Category ID</label> <input class="form-control"
-								placeholder="Category ID" type="text" ng-model="categoryid">
-						</div>
-						<div class="form-group">
-							<label>Ảnh</label> <input class="form-control"
-								placeholder="Ảnh" type="text" ng-model="thumbnail">
-						</div>
+    <body>
 
-						<div>
-							<button class="btn btn-primary" id="Create">
-								Thêm Việc làm</button>
-						</div>
-					</fieldset>
-				</form>
-			</div>
-		</div>
+        <div id="wrapper">
 
+            <!-- Navigation -->
+            <%@include file="nav.jsp" %>
 
-	</form>
+            <!-- Page Content -->
+            <div id="page-wrapper">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <h1 class="page-header">Thêm việc làm mới</h1>
+                        </div>
+                        <!-- /.col-lg-12 -->
+                        <div class="panel-body">
+                            <div class="row">
+                                <div class="col-lg-6">
 
-	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-		integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-		crossorigin="anonymous"></script>
-	<script
-		src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
-		integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
-		crossorigin="anonymous"></script>
-	<script
-		src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
-		integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
-		crossorigin="anonymous"></script>
+                                    <form method="post" action="themViecLam" enctype="multipart/form-data" role="form">
+                                        <div class="form-group">
+                                            <label>Ảnh</label>
+                                            <input type="text" minlength="5" required name="thumbnail" class="form-control">
 
-	<%@ include file="footer.jsp"%>
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Tiêu đề</label>
+                                            <input type="text" required name="tieuDe" class="form-control">
 
+                                        </div>
+                                        <!--                                        <div class="form-group">
+                                                                                    <label>Logo</label>
+                                                                                    <input type="file" name="file" class="form-control">
+                                                                                   
+                                                                                </div>
+                                        -->                                        
+                                       
+                                        <div class="form-group">
+                                            <label>Tên công ty</label>
+                                            <input type="text" min="0" max="23" required name="tenCongTy" class="form-control">
+
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Địa chỉ</label>
+                                            <input type="text" min="0" max="23" required name="diaChi" class="form-control">
+
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Mức lương</label>
+                                            <input type="float" required name="mucLuong" class="form-control">
+
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Mô tả</label>
+                                            <input type="text" required name="moTa" class="form-control">
+
+                                        </div>
 
 
-	  <script>
-  var app= angular.module('demo1', ['ngResource']);
-  
+                                        <button type="submit" class="btn btn-default">Thêm</button>
 
-   app.controller('Hello1', ['$scope', '$resource',function($scope,$resource) {
-       
-	        
-       $scope.create = function(){
-       	Vieclam = $resource(
-       		    "http://localhost:8080/Test1/rest/addvieclam",
-       		    {},
-       		    {addVieclam: {method:'POST',isArray:false}}
-       	);
-       	
-       	var vieclam = {};
-   		
-       	vieclam.tieude = $scope.tieude;
-       	vieclam.tencongty = $scope.tencongty;
-       	vieclam.diachi = $scope.diachi;
-       	vieclam.mucluong = $scope.mucluong;    	
-       	vieclam.mota = $scope.mota;
-       	vieclam.thumbnail = $scope.thumbnail;
-       	vieclam.categoryid = $scope.categoryid;
-       	
+                                    </form>
+                                    <script>
+                                        $("#commentform").validate();
+                                    </script>
+    </div>
+    <!-- /.col-lg-6 (nested) -->
+    
+    <!-- /.col-lg-6 (nested) -->
+    </div>
+    <!-- /.row (nested) -->
+    </div>
+</div>
+<!-- /.row -->
+</div>
+<!-- /.container-fluid -->
+</div>
+<!-- /#page-wrapper -->
 
-	  Vieclam.addVieclam(vieclam);	  
-	  alert('Hello motherfucker ?');
-	  window.location="http://localhost:8080/Test1/vieclam";
- 		
-       };
+</div>
+<!-- /#wrapper -->
 
-   }]);
-</script>
+<!-- jQuery -->
+<script src="../vendor/jquery/jquery.min.js"></script>
 
+                                    <!-- Bootstrap Core JavaScript -->
+                                    <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
 
-</body>
+                                    <!-- Metis Menu Plugin JavaScript -->
+                                    <script src="vendor/metisMenu/metisMenu.min.js"></script>
 
-</html>
+                                    <!-- Custom Theme JavaScript -->
+                                    <script src="dist/js/sb-admin-2.js"></script>
+
+                                    </body>
+
+                                    </html>
+

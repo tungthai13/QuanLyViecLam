@@ -48,13 +48,14 @@
 				<tbody>
 				
 				<%
-                                 List<ViecLam>  list =  new ViecLamDAO().tatCaViecLam();
+				
+				
+                              List<ViecLam>  list = (List<ViecLam>) request.getAttribute("listViecLamTimKiem");
                                 for(ViecLam vieclam : list){
                                      
                                 
                                     %>
 					<tr>
-					
 						<td style="width: 20px"><img
 							style="width: 80px; height: 70px" src="<%=vieclam.getThumbnail() %>" /></td>
 						<td> <a href="chitietvieclam?id=<%=vieclam.getIdViecLam() %>" ><%=vieclam.getTieuDe() %></a>

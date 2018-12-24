@@ -15,11 +15,11 @@
 		<div class="collapse navbar-collapse" id="navbarResponsive"
 			style="margin-left: 50px">
 			<ul class="navbar-nav" style="margin-left: 50px; margin-top: 15px">
-				<form action="timkiemvieclam">
+				<form action="timKiemViecLam">
 					<li class="nav-item">
 						<div class="input-group">
 
-							<input type="text" name="timkiem" class="form-control"
+							<input type="text" name="timKiem" class="form-control"
 								placeholder="Nhập..."> <span class="input-group-btn">
 								<button class="btn btn-secondary" type="submit">Tìm
 									kiếm</button>

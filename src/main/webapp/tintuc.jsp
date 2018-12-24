@@ -59,7 +59,7 @@
               <td class="media mt-4" style="height:110px;">
                 <img style="width: 80px; height:80px; margin-left:20px" src="<%=tintuc.getThumbnail() %>" alt="">
                 <div class="media-body">
-                  <a style="margin-left:30px" href="#"><h6 class="mt-0"><%=tintuc.getTieuDe() %></h6></a>
+                  <a style="margin-left:30px" href="chitiettintuc?id=<%=tintuc.getIdTinTuc() %>"><h6 class="mt-0"><%=tintuc.getTieuDe() %></h6></a>
                   <p style="margin-left:10px">  <%=tintuc.getNoiDungVanTat() %></p>
                   <p style="margin-left:10px"> Ngày đăng: <%=tintuc.getNgayPost() %></p>
                 </div>

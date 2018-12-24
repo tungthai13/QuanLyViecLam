@@ -10,10 +10,17 @@ import model.ViecLam;
 public class Test {
 	
 	public static void main(String[] args) {
-		List<ViecLam> list = new ViecLamDAO().tatCaViecLam();
-		List<TinTuc> list1 = new TinTucDAO().tatCaTinTuc();
-		System.out.println(list);
 	
+		
+		ViecLam v = new ViecLam();
+		v.setThumbnail("abc");
+		v.setTieuDe("abc");
+		v.setTenCongTy("abc");
+		v.setDiaChi("abc");
+		
+		v.setThumbnail("abc");
+		new ViecLamDAO().themViecLam(v);
+		
 	}
 
 	 

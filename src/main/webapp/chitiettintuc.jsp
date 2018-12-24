@@ -43,31 +43,31 @@
 
 		<div class="row">
 		<%
-					ViecLam chitietvieclam = (ViecLam) request.getAttribute("chitietvieclam");
+					TinTuc chitiettintuc = (TinTuc) request.getAttribute("chitiettintuc");
 		
 		%>
 		
 
 			<div class="col-md-8">
 
-				<img class="img-fluid rounded" src="<%=chitietvieclam.getThumbnail() %>">
+				<img class="img-fluid rounded" src="<%=chitiettintuc.getThumbnail() %>">
 					
 				<hr>
 				<p>
 					<td>
 						<h1 class="mt-4 mb-3">
-							<small> <b><%=chitietvieclam.getTieuDe() %></b>
+							<small> <b><%=chitiettintuc.getTieuDe() %></b>
 							</small>
 						</h1>
 
-					</td> <a class="breadcrumb"><%=chitietvieclam.getTenCongTy() %></a>
+					</td> <a class="breadcrumb"><%=chitiettintuc.getNoiDungChinh() %></a>
 
 				</p>
 
 
-				<p class="breadcrumb">Mô tả công việc: <%=chitietvieclam.getMoTa() %></p>
-				<p class="breadcrumb">Mức lương: <%=chitietvieclam.getMucLuong()%></p>
-				<p class="breadcrumb">Địa chỉ: <%=chitietvieclam.getDiaChi() %></p>
+
+				<p class="breadcrumb">Người đăng: <%=chitiettintuc.getNguoiPost()%></p>
+				<p class="breadcrumb">Ngày đăng: <%=chitiettintuc.getNgayPost() %></p>
 
 
 
@@ -119,6 +119,7 @@
 				</div>
 
 			</div>
+			
 		</div>
 	</div>
 		

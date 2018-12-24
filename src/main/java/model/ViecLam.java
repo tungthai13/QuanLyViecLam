@@ -7,7 +7,7 @@ public class ViecLam {
 	private String tieuDe;
 	private String tenCongTy;
 	private String diaChi;
-	private String mucLuong;
+	private double mucLuong;
 	private String moTa;
 	
 	
@@ -16,7 +16,7 @@ public class ViecLam {
 	}
 
 
-	public ViecLam(int idViecLam, String thumbnail, String tieuDe, String tenCongTy, String diaChi, String mucLuong,
+	public ViecLam(int idViecLam, String thumbnail, String tieuDe, String tenCongTy, String diaChi, double mucLuong,
 			String moTa) {
 		this.idViecLam = idViecLam;
 		this.thumbnail = thumbnail;
@@ -78,12 +78,12 @@ public class ViecLam {
 	}
 
 
-	public String getMucLuong() {
+	public double getMucLuong() {
 		return mucLuong;
 	}
 
 
-	public void setMucLuong(String mucLuong) {
+	public void setMucLuong(double mucLuong) {
 		this.mucLuong = mucLuong;
 	}
 
@@ -103,6 +103,9 @@ public class ViecLam {
 		return "ViecLam [idViecLam=" + idViecLam + ", thumbnail=" + thumbnail + ", tieuDe=" + tieuDe + ", tenCongTy="
 				+ tenCongTy + ", diaChi=" + diaChi + ", mucLuong=" + mucLuong + ", moTa=" + moTa + "]";
 	}
+
+
+
 	
 	
 	

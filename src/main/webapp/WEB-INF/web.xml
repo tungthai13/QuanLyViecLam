@@ -4,4 +4,44 @@
 
 <web-app>
   <display-name>Archetype Created Web Application</display-name>
+  <servlet>
+  	<servlet-name>timKiemViecLam</servlet-name>
+  	<display-name>timKiemViecLam</display-name>
+  	<description></description>
+  	<servlet-class>controller.timKiemViecLam</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>chitietvieclam</servlet-name>
+  	<display-name>chitietvieclam</display-name>
+  	<description></description>
+  	<servlet-class>controller.chitietvieclam</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>chitiettintuc</servlet-name>
+  	<display-name>chitiettintuc</display-name>
+  	<description></description>
+  	<servlet-class>controller.chitiettintuc</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>themViecLam</servlet-name>
+  	<display-name>themViecLam</display-name>
+  	<description></description>
+  	<servlet-class>controller.themViecLam</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>timKiemViecLam</servlet-name>
+  	<url-pattern>/timKiemViecLam</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>chitietvieclam</servlet-name>
+  	<url-pattern>/chitietvieclam</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>chitiettintuc</servlet-name>
+  	<url-pattern>/chitiettintuc</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>themViecLam</servlet-name>
+  	<url-pattern>/themViecLam</url-pattern>
+  </servlet-mapping>
 </web-app>

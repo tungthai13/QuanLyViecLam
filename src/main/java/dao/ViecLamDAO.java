@@ -33,7 +33,7 @@ public class ViecLamDAO {
 				vieclam.setTieuDe(rs.getString("tieuDe"));
 				vieclam.setTenCongTy(rs.getString("tenCongTy"));
 				vieclam.setDiaChi(rs.getString("diaChi"));
-				vieclam.setMucLuong(rs.getString("mucLuong"));
+				vieclam.setMucLuong(rs.getDouble("mucLuong"));
 				vieclam.setMoTa(rs.getString("moTa"));
 				list.add(vieclam);
 			}
@@ -48,7 +48,135 @@ public class ViecLamDAO {
 		
 	}
 	
+	 public List<ViecLam> timKiemViecLam(String timKiem){
+	        List<ViecLam> list = new ArrayList<>();
+	        
+	        try {
+	            con = DBConnection.getConnection();
+	            String search = "%"+timKiem+"%";
+	            String sql = "Select * from vieclam where tieuDe like ?";
+	            PreparedStatement pstmt = (PreparedStatement) con.prepareStatement(sql);
+	            pstmt.setString(1, search);
+	            
+	            ResultSet rs = pstmt.executeQuery();
+	            ViecLam vieclam;
+	            while(rs.next()){
+	            	vieclam = new ViecLam();
+					vieclam.setIdViecLam(rs.getInt("idViecLam"));
+					vieclam.setThumbnail(rs.getString("thumbnail"));
+					vieclam.setTieuDe(rs.getString("tieuDe"));
+					vieclam.setTenCongTy(rs.getString("tenCongTy"));
+					vieclam.setDiaChi(rs.getString("diaChi"));
+					vieclam.setMucLuong(rs.getDouble("mucLuong"));
+					vieclam.setMoTa(rs.getString("moTa"));
+	                list.add(vieclam);
+	            }
+	            
+	            return list;
+	        } catch (SQLException ex) {
+	            Logger.getLogger(ViecLamDAO.class.getName()).log(Level.SEVERE, null, ex);
+	        } finally {
+	            try {
+	                con.close();
+	            } catch (SQLException ex) {
+	                Logger.getLogger(ViecLamDAO.class.getName()).log(Level.SEVERE, null, ex);
+	            }
+	        }
+	        
+	        return null;
+	    }
 	
+	  public ViecLam getViecLam(int idViecLam){
+	        try {
+	            con = DBConnection.getConnection();
+
+	            String sql = "Select * from vieclam where idViecLam = ?";
+	            PreparedStatement pstmt = (PreparedStatement) con.prepareStatement(sql);
+	            pstmt.setInt(1, idViecLam);
+	            
+	            ResultSet rs = pstmt.executeQuery();
+	            ViecLam vieclam = null;
+	            while(rs.next()){
+	            	vieclam = new ViecLam();
+					vieclam.setIdViecLam(rs.getInt("idViecLam"));
+					vieclam.setThumbnail(rs.getString("thumbnail"));
+					vieclam.setTieuDe(rs.getString("tieuDe"));
+					vieclam.setTenCongTy(rs.getString("tenCongTy"));
+					vieclam.setDiaChi(rs.getString("diaChi"));
+					vieclam.setMucLuong(rs.getDouble("mucLuong"));
+					vieclam.setMoTa(rs.getString("moTa"));
+	            }
+	            
+	            return vieclam;
+	        } catch (SQLException ex) {
+	            Logger.getLogger(ViecLamDAO.class.getName()).log(Level.SEVERE, null, ex);
+	        } finally {
+	            try {
+	                con.close();
+	            } catch (SQLException ex) {
+	                Logger.getLogger(ViecLamDAO.class.getName()).log(Level.SEVERE, null, ex);
+	            }
+	        }
+	        return null;
+	    }
 	
+	  
+	  public List<ViecLam> top8ViecLam(){
+			List<ViecLam> list = new ArrayList<>();
+			
+			try {
+				con = DBConnection.getConnection();
+				String sql = "SELECT * FROM vieclam ORDER by idViecLam DESC LIMIT 8";
+				PreparedStatement pstm = (PreparedStatement) con.prepareStatement(sql);
+				ResultSet rs = pstm.executeQuery();
+				ViecLam vieclam;
+				while(rs.next()) {
+					vieclam = new ViecLam();
+					vieclam.setIdViecLam(rs.getInt("idViecLam"));
+					vieclam.setThumbnail(rs.getString("thumbnail"));
+					vieclam.setTieuDe(rs.getString("tieuDe"));
+					vieclam.setTenCongTy(rs.getString("tenCongTy"));
+					vieclam.setDiaChi(rs.getString("diaChi"));
+					vieclam.setMucLuong(rs.getDouble("mucLuong"));
+					vieclam.setMoTa(rs.getString("moTa"));
+					list.add(vieclam);
+				}
+				
+				return list;
+				
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+			
+			return null;
+			
+		}
+	  
+	  public boolean themViecLam(ViecLam v){
+	        try {
+	            int result = 0;
+	            con = DBConnection.getConnection();
+	            String sql = "insert into vieclam (thumbnail, tieuDe, tenCongTy, diaChi, mucLuong, moTa) values (?,?,?,?,?,?)";
+	            PreparedStatement pstmt = (PreparedStatement) con.prepareStatement(sql);
+	            pstmt.setString(1, v.getThumbnail());
+	            pstmt.setString(2, v.getTieuDe());
+	            pstmt.setString(3, v.getTenCongTy());
+	            pstmt.setString(4, v.getDiaChi());
+	            pstmt.setDouble(5, v.getMucLuong());
+	            pstmt.setString(6, v.getMoTa());	            
+	            int rs = pstmt.executeUpdate();
+	            
+	            return rs>0;
+	        } catch (SQLException ex) {
+	            Logger.getLogger(ViecLamDAO.class.getName()).log(Level.SEVERE, null, ex);
+	            return false;
+	        } finally {
+	            try {
+	                con.close();
+	            } catch (SQLException ex) {
+	                Logger.getLogger(ViecLamDAO.class.getName()).log(Level.SEVERE, null, ex);
+	            }
+	        }
+	    }
 	
 }

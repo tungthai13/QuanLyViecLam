@@ -1,6 +1,6 @@
 
-<%@page import="dao.TinTucDAO"%>
-<%@page import="model.TinTuc"%>
+<%@page import="dao.NguoiDungDAO"%>
+<%@page import="model.NguoiDung"%>
 <%@page import="java.util.List"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -77,7 +77,7 @@
                                         <th>Facebook</th>
                                         <th>Quê quán </th>
                                         <th>Học vấn</th>
-                                        <th>Trường/th>
+                                        <th>Trường</th>
                                         <th>Khoa</th>
                                         <th>Năm tốt nghiệp</th>
                                         <th>Kỹ năng</th>                                        
@@ -91,19 +91,32 @@
                                 </thead>
                                 <tbody>
                                  <%
-                                 List<TinTuc>  list =  new TinTucDAO().tatCaTinTuc();
-                                for(TinTuc tintuc : list){
+                                 List<NguoiDung>  list =  new NguoiDungDAO().tatCaNguoiDung();
+                                for(NguoiDung nguoidung : list){
                                      
                                 
                                     %>
                                     <tr class="odd gradeX">
-                                        <td><%=tintuc.getIdTinTuc()%></td>
-                                        <td><%=tintuc.getThumbnail()%></td>
-                                        <td><%=tintuc.getTieuDe()%></td>
-                                        <td><%=tintuc.getNguoiPost() %></td>
-                                       	<td><%=tintuc.getNgayPost() %></td>
-                                        <td><%=tintuc.getNoiDungVanTat() %></td>
-                                       	<td><%=tintuc.getNoiDungChinh() %></td>
+                                        <td><%=nguoidung.getIdUser()%></td>
+                                        <td><%=nguoidung.getUserName()%></td>
+                                        <td><%=nguoidung.getPassword()%></td>
+                                        <td><%=nguoidung.getHoTen() %></td>
+                                       	<td><%=nguoidung.getEmail() %></td>
+                                        <td><%=nguoidung.getSdt() %></td>
+                                       	<td><%=nguoidung.getPhanQuyen() %></td>
+                                       	<td><%=nguoidung.getViTriUngTuyen()%></td>
+                                        <td><%=nguoidung.getAnh()%></td>
+                                        <td><%=nguoidung.getSkype()%></td>
+                                        <td><%=nguoidung.getFacebook() %></td>
+                                       	<td><%=nguoidung.getQueQuan() %></td>
+                                        <td><%=nguoidung.getHocVan() %></td>
+                                       	<td><%=nguoidung.getTruong() %></td>
+                                       	<td><%=nguoidung.getKhoa()%></td>
+                                        <td><%=nguoidung.getNamTotNghiep()%></td>
+                                        <td><%=nguoidung.getKyNang()%></td>
+                                        <td><%=nguoidung.getKinhNghiemCongTac() %></td>
+                                       	<td><%=nguoidung.getGhiChu() %></td>
+                                        <td><%=nguoidung.getCv() %></td>
 										<td><a href="#">Sửa</a></td>
                                         <td><a href="#">Xóa</a></td>
                                     </tr>
@@ -114,7 +127,7 @@
                                 </tbody>
                             </table>
                             <!-- /.table-responsive -->
-                            <a class="btn btn-primary" href="#">Thêm tin tức mới</a>
+                            <a class="btn btn-primary" href="#">Thêm người dùng mới</a>
                              
                             
     </div>

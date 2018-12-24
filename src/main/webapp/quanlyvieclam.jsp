@@ -101,7 +101,7 @@
                                 </tbody>
                             </table>
                             <!-- /.table-responsive -->
-                            <a class="btn btn-primary" href="#">Thêm việc làm mới</a>
+                            <a class="btn btn-primary" href="themvieclam.jsp">Thêm việc làm mới</a>
                              
                             
     </div>
