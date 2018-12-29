@@ -16,8 +16,7 @@
          <div class="card card-login mx-auto mt-5" style="max-width: 25rem">
             <div class="card-header">Login</div>
             <div class="card-body">
-               <c:url var="loginUrl" value="/login"/>
-               <form action="${loginUrl}" method="post">
+               <form action="dangnhap" method="post">
                   <div class="form-group">
                      <label for="username">Username</label>
                      <input class="form-control" id="username" name="username" type="text" placeholder="Enter Username">
@@ -32,7 +31,7 @@
                         <input class="form-check-input" type="checkbox" name="remember-me"> Remember Password</label>
                      </div>
                   </div>
-                  <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}">
+                  <input type="hidden" name="" value="">
                   <input type="submit" class="btn btn-primary btn-block" value="Login">
                </form>
               

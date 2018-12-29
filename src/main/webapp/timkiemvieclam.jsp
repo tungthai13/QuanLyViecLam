@@ -62,7 +62,7 @@
 							<p>
 								<b>Tên công ty: <%=vieclam.getTenCongTy() %></b>
 							</p></td>
-						<td><b>Mức lương: <%=vieclam.getMucLuong() %></b>
+						<td><b>Mức lương: <%=vieclam.getMucLuong()%></b>
 							<p>
 								<b>Địa chỉ: <%=vieclam.getDiaChi() %></b>
 							</p></td>

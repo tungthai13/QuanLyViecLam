@@ -33,7 +33,7 @@ public class ViecLamDAO {
 				vieclam.setTieuDe(rs.getString("tieuDe"));
 				vieclam.setTenCongTy(rs.getString("tenCongTy"));
 				vieclam.setDiaChi(rs.getString("diaChi"));
-				vieclam.setMucLuong(rs.getDouble("mucLuong"));
+				vieclam.setMucLuong(rs.getFloat("mucLuong"));
 				vieclam.setMoTa(rs.getString("moTa"));
 				list.add(vieclam);
 			}
@@ -67,7 +67,7 @@ public class ViecLamDAO {
 					vieclam.setTieuDe(rs.getString("tieuDe"));
 					vieclam.setTenCongTy(rs.getString("tenCongTy"));
 					vieclam.setDiaChi(rs.getString("diaChi"));
-					vieclam.setMucLuong(rs.getDouble("mucLuong"));
+					vieclam.setMucLuong(rs.getFloat("mucLuong"));
 					vieclam.setMoTa(rs.getString("moTa"));
 	                list.add(vieclam);
 	            }
@@ -103,7 +103,7 @@ public class ViecLamDAO {
 					vieclam.setTieuDe(rs.getString("tieuDe"));
 					vieclam.setTenCongTy(rs.getString("tenCongTy"));
 					vieclam.setDiaChi(rs.getString("diaChi"));
-					vieclam.setMucLuong(rs.getDouble("mucLuong"));
+					vieclam.setMucLuong(rs.getFloat("mucLuong"));
 					vieclam.setMoTa(rs.getString("moTa"));
 	            }
 	            
@@ -137,7 +137,7 @@ public class ViecLamDAO {
 					vieclam.setTieuDe(rs.getString("tieuDe"));
 					vieclam.setTenCongTy(rs.getString("tenCongTy"));
 					vieclam.setDiaChi(rs.getString("diaChi"));
-					vieclam.setMucLuong(rs.getDouble("mucLuong"));
+					vieclam.setMucLuong(rs.getFloat("mucLuong"));
 					vieclam.setMoTa(rs.getString("moTa"));
 					list.add(vieclam);
 				}
@@ -162,7 +162,7 @@ public class ViecLamDAO {
 	            pstmt.setString(2, v.getTieuDe());
 	            pstmt.setString(3, v.getTenCongTy());
 	            pstmt.setString(4, v.getDiaChi());
-	            pstmt.setDouble(5, v.getMucLuong());
+	            pstmt.setFloat(5, v.getMucLuong());
 	            pstmt.setString(6, v.getMoTa());	            
 	            int rs = pstmt.executeUpdate();
 	            

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 21, 2018 at 08:34 AM
+-- Generation Time: Dec 29, 2018 at 02:19 PM
 -- Server version: 10.1.32-MariaDB
 -- PHP Version: 7.2.5
 
@@ -40,6 +40,13 @@ CREATE TABLE `hosoungtuyen` (
   `idViecLam` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
+--
+-- Dumping data for table `hosoungtuyen`
+--
+
+INSERT INTO `hosoungtuyen` (`idHoSo`, `hoTen`, `ngaySinh`, `email`, `sdt`, `cv`, `noidungungtuyen`, `idUser`, `idViecLam`) VALUES
+(1, 'Nguyễn Thành Long', '2018-12-01', 'ntlong0410@gmail.com', 1634380319, 'cv.txt', 'Dev JAVA', 1, 1);
+
 -- --------------------------------------------------------
 
 --
@@ -69,6 +76,13 @@ CREATE TABLE `nguoidung` (
   `cv` varchar(200) COLLATE utf8_unicode_ci DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
+--
+-- Dumping data for table `nguoidung`
+--
+
+INSERT INTO `nguoidung` (`idUser`, `userName`, `password`, `hoTen`, `email`, `sdt`, `phanQuyen`, `viTriUngTuyen`, `anh`, `skype`, `facebook`, `queQuan`, `hocVan`, `truong`, `khoa`, `namTotNghiep`, `kyNang`, `kinhNghiemCongTac`, `ghiChu`, `cv`) VALUES
+(1, 'ntlong0410', '123456', 'Nguyễn Thành Long', 'ntlong0410@gmail.com', 1634380319, 'Admin', 'Dev', 'abc.jpg', 'long@microsoft.com', 'Nguyễn Thành Long', 'Hà Nội', 'Đại học', 'Điện Lực', 'Công nghê thông tin', 2019, 'Team-work', 'Không', 'Không', 'cv.txt');
+
 -- --------------------------------------------------------
 
 --
@@ -84,6 +98,15 @@ CREATE TABLE `tintuc` (
   `noiDungVanTat` varchar(200) COLLATE utf8_unicode_ci DEFAULT NULL,
   `noiDungChinh` varchar(200) COLLATE utf8_unicode_ci DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Dumping data for table `tintuc`
+--
+
+INSERT INTO `tintuc` (`idTinTuc`, `thumbnail`, `tieuDe`, `nguoiPost`, `ngayPost`, `noiDungVanTat`, `noiDungChinh`) VALUES
+(1, 'resources/itsol.jpg', 'Thời tiết', 'Long', '2018-12-20', 'Lạnh', 'Lạnh dưới 10 độ'),
+(2, 'resources/itsol.jpg', 'Tuyển nhân viên bán hàng', 'Long 1', '2018-12-18', 'Tuyển dụng', 'Tuyển nhân viên bán hàng full-time'),
+(3, 'resources/itsol.jpg', 'Công ty phá sản', 'Long 2', '2018-12-19', 'Phá sản', 'Công ty itsol chính thức phá sản');
 
 -- --------------------------------------------------------
 
@@ -110,9 +133,23 @@ CREATE TABLE `vieclam` (
   `tenCongTy` varchar(200) COLLATE utf8_unicode_ci DEFAULT NULL,
   `diaChi` varchar(200) COLLATE utf8_unicode_ci DEFAULT NULL,
   `mucLuong` float DEFAULT NULL,
-  `moTa` varchar(200) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `categoryId` int(11) NOT NULL
+  `moTa` varchar(200) COLLATE utf8_unicode_ci DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Dumping data for table `vieclam`
+--
+
+INSERT INTO `vieclam` (`idViecLam`, `thumbnail`, `tieuDe`, `tenCongTy`, `diaChi`, `mucLuong`, `moTa`) VALUES
+(1, 'resources/itsol.jpg', 'Java', 'ITSOL', 'Ngõ 82 Duy Tân', 10000000, 'Full-time'),
+(2, 'resources/itsol.jpg', 'Python', 'ITSOL', 'Ngõ 82 Duy Tân', 20000000, 'Full-time'),
+(3, 'resources/itsol.jpg', '.Net', 'ITSOL', 'Ngõ 82 Duy Tân', 15000000, 'Part-time'),
+(4, 'resources/itsol.jpg', 'Ruby', 'ITSOL', 'Ngõ 82 Duy Tân', 17000000, 'Full-time'),
+(5, 'resources/itsol.jpg', 'Android', 'ITSOL', 'Ngõ 82 Duy Tân', 19000000, 'Part-time'),
+(6, 'resources/itsol.jpg', 'Microsoft', 'MicrosoftWare', 'Ngõ 173 Hoàng Hoa Thám', 1000000000, 'Code all time'),
+(7, 'resources/itsol.jpg', 'Tester ', 'ITSOL', 'Ngõ 82 Duy Tân', 5000000, 'Test phần mềm'),
+(8, 'resources/itsol.jpg', 'PM', 'ITSOL', 'Ngỡ 82 Duy Tân', 10000000, 'Quản lý dự án phần mềm'),
+(9, 'resources/itsol.jpg', 'SQL', 'ITSOL', 'Ngõ 82 Duy Tân', 7000000, 'Thiết lập dữ liệu cho phần mềm');
 
 --
 -- Indexes for dumped tables
@@ -159,25 +196,25 @@ ALTER TABLE `vieclam`
 -- AUTO_INCREMENT for table `hosoungtuyen`
 --
 ALTER TABLE `hosoungtuyen`
-  MODIFY `idHoSo` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `idHoSo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `nguoidung`
 --
 ALTER TABLE `nguoidung`
-  MODIFY `idUser` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `idUser` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `tintuc`
 --
 ALTER TABLE `tintuc`
-  MODIFY `idTinTuc` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `idTinTuc` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `vieclam`
 --
 ALTER TABLE `vieclam`
-  MODIFY `idViecLam` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `idViecLam` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- Constraints for dumped tables
