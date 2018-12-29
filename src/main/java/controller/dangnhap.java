@@ -7,6 +7,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -52,7 +53,11 @@ public class dangnhap extends HttpServlet {
 			ResultSet rs = pstm.executeQuery();
 			
 			while(rs.next()) {
-				response.sendRedirect("success.jsp");
+				HttpSession session = request.getSession(true);
+				NguoiDung user = new NguoiDung();
+				user.setUserName(username);
+				session.setAttribute("user", user);
+				request.getRequestDispatcher("trangchu.jsp").forward(request, response);
 			}
 			response.sendRedirect("error.jsp");
 			return;
@@ -82,15 +87,16 @@ public class dangnhap extends HttpServlet {
 			ResultSet rs = pstm.executeQuery();
 			
 			while(rs.next()) {
-				response.sendRedirect("success.jsp");
+				HttpSession session = request.getSession(true);
+				NguoiDung user = new NguoiDung();
+				user.setUserName(username);
+				session.setAttribute("user", user);
+				request.getRequestDispatcher("trangchu.jsp").forward(request, response);
 			}
 			response.sendRedirect("error.jsp");
-			return;
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		
-		doGet(request, response);
 	}
 
 }

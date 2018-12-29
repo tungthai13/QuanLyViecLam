@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ page import="model.NguoiDung" %>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
 <link href="resources/css/modern-business.css" rel="stylesheet">
@@ -35,10 +36,18 @@
 				<li class="nav-item"><a class="nav-link" href="#"> Tạo hồ
 						sơ </a></li>						
 				<li class="nav-item"><a class="nav-link" href="tintuc.jsp">Tin tức</a></li>
+				<% 
+					NguoiDung user = (NguoiDung) request.getSession().getAttribute("user");
+					if (user == null) {
+				%>
 				<li class="nav-item"><a class="nav-link" href="dangky.jsp">Đăng
 						Ký</a></li>
 				<li class="nav-item"><a class="nav-link" href="dangnhap.jsp">Đăng
 						nhập</a></li>
+				<% } else { %>
+					<li class="nav-item"><a class="nav-link" href="#">Xin chào <%=user.getUserName()%></a></li>
+					<li class="nav-item"><a class="nav-link" href="DangXuat">Đăng xuất</a></li>
+				<% } %>
 				<sec:authorize access="isAuthenticated()">
 					<li class="nav-item"><a class="nav-link" href="#"><sec:authentication
 								property="principal.username" /></a></li>
