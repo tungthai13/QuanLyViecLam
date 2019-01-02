@@ -176,5 +176,34 @@ Connection con;
 	        }
 	    }
 	  
+	  public boolean ungTuyen(HoSo h){
+	        try {
+	            int result = 0;
+	            con = DBConnection.getConnection();
+	            String sql = "insert into hosoungtuyen (hoTen, ngaySinh, email, sdt, cv, noiDungUngTuyen,idUser,idViecLam) values (?,?,?,?,?,?,?,?)";
+	            PreparedStatement pstmt = (PreparedStatement) con.prepareStatement(sql);
+	            pstmt.setString(1, h.getHoTen());
+	            pstmt.setDate(2, h.getNgaySinh());
+	            pstmt.setString(3, h.getEmail());
+	            pstmt.setInt(4, h.getSdt());
+	            pstmt.setString(5, "");
+	            pstmt.setString(6, h.getNoiDungUngTuyen());
+	            pstmt.setInt(7, 0);
+	            pstmt.setInt(8, h.getIdViecLam()); 
+	            int rs = pstmt.executeUpdate();
+	            
+	            return rs>0;
+	        } catch (SQLException ex) {
+	            Logger.getLogger(HoSoDAO.class.getName()).log(Level.SEVERE, null, ex);
+	            return false;
+	        } finally {
+	            try {
+	                con.close();
+	            } catch (SQLException ex) {
+	                Logger.getLogger(HoSoDAO.class.getName()).log(Level.SEVERE, null, ex);
+	            }
+	        }
+	    }
+	  
 	  
 }

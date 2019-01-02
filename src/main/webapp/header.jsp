@@ -12,7 +12,7 @@
 <nav
 	class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark fixed-top">
 	<div class="container">
-		<a class="navbar-brand" href="trangchu.jsp">SMARTWEB</a>
+		<a class="navbar-brand" href="trangchu.jsp">Finding Job</a>
 		<div class="collapse navbar-collapse" id="navbarResponsive"
 			style="margin-left: 50px">
 			<ul class="navbar-nav" style="margin-left: 50px; margin-top: 15px">

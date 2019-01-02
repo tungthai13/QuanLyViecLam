@@ -16,7 +16,7 @@
 <meta name="description" content="">
 <meta name="author" content="">
 
-<title>Smartweb</title>
+<title>Finding Job</title>
 
 <link href="<c:url value="resources/css/modern-business.css"/>"
 	rel="stylesheet">
@@ -38,13 +38,7 @@
 	src="http://code.jquery.com/jquery-latest.js"></script>
 <script type="text/javascript" src="jquery.shorten.1.0.js"></script>
 
-<script type="text/javascript">
-	$(".card-text").shorten({
-		"showChars" : 10,
-		"moreText" : "Xem thêm",
-		"lessText" : "Rút gọn",
-	});
-</script>
+
 
 <style>
 .carousel-inner img {
@@ -96,7 +90,7 @@
 
 	
 
-		<h1 class="my-4">Chào mừng đến với Smartweb</h1>
+		<h1 class="my-4"><marquee>Chào mừng đến với Finding Job</marquee></h1>
 
 
 		<div class="row">
@@ -110,7 +104,7 @@
 					 for(ViecLam vieclam : list){
 	%>
 						<p class="card-text">
-							<a href="chitietvieclam?id=<%=vieclam.getIdViecLam() %>"><%=vieclam.getTieuDe()%></a>
+							<blink><a href="chitietvieclam?id=<%=vieclam.getIdViecLam() %>"><%=vieclam.getTieuDe()%></a>
 						</p>
 						<%} %>
 					</div>
@@ -129,12 +123,12 @@
 					%>
 					
 						<p class="card-text">
-							<a href="chitiettintuc?id=<%=tintuc.getIdTinTuc() %>"><%=tintuc.getTieuDe() %></a>
+							<a href="chitiettintuc?id=<%=tintuc.getIdTinTuc() %>"><blink><%=tintuc.getTieuDe() %></blink></a>
 						</p>
 						<%} %>
 					</div>
 					<div class="card-footer">
-						<a href="tintuc.jsp" class="btn btn-primary">Learn More</a>
+						<a href="tintuc.jsp" class="btn btn-primary">Xem thêm</a>
 					</div>
 				</div>
 			</div>
@@ -234,46 +228,7 @@
 
 
 
-	<script>
-	var app = angular.module('demo1', [ 'ngResource' ]);
-	app
-			.controller(
-					'Hello1',
-					[
-							'$scope',
-							'$resource',
-							function($scope, $resource, Vieclam) {
-								function allvieclam() {
-									$scope.vieclam = $resource(
-											'http://localhost:8080/Test1/rest/top5vieclam')
-											.query(function(data) {
-												return data;
-											});
-								}
-								;
-
-								allvieclam();
-								
-								
-								function alltintuc() {
-									$scope.tintuc = $resource(
-											'http://localhost:8080/Test1/rest/top5tintuc')
-											.query(function(data) {
-												return data;
-											});
-								}
-								;
-
-								alltintuc();
-								
-								
-							}
-							
-							
-							
-							]);
-</script>
-
+	
 
 	<%@ include file="footer.jsp"%>
 </body>

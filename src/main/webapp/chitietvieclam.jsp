@@ -115,7 +115,7 @@
 
 
 				<div>
-					<button class="btn btn-success btn-lg">Làm hồ sơ ngay</button>
+					<button class="btn btn-success btn-lg"><a style="color:white" href="ungTuyen.jsp?idViecLam=<%=chitietvieclam.getIdViecLam()%>">Làm hồ sơ ngay</a></button>
 				</div>
 
 			</div>

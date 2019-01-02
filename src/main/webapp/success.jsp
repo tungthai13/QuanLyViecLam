@@ -7,6 +7,8 @@
 <title>Insert title here</title>
 </head>
 <body>
-Login success 
+<div>Ứng tuyển thành công</div>
+<div>Ấn nút để trở lại trang chủ</div>
+<button class="btn btn-success btn-lg"><a style="color:white" href="trangchu.jsp">Back</a></button>
 </body>
 </html>
