@@ -1,5 +1,6 @@
 package test;
 
+import java.sql.Date;
 import java.util.List;
 
 import dao.LoginDAO;
@@ -15,16 +16,15 @@ public class Test {
 	public static void main(String[] args) {
 	
 		
-		ViecLam v = new ViecLam();
-		v.setIdViecLam(27);
-		v.setThumbnail("abc");
-		v.setTieuDe("abc");
-		v.setTenCongTy("abc");
-		v.setDiaChi("abc");
-		v.setMucLuong("10");
-		v.setMoTa("abc");
-		
-		new ViecLamDAO().suaViecLam(v);
+		TinTuc t = new TinTuc();
+		t.setIdTinTuc(5);
+		t.setThumbnail("test");
+		t.setTieuDe("test");
+		t.setNguoiPost("t123");
+		t.setNgayPost(Date.valueOf("2019-01-03"));
+		t.setNoiDungVanTat("t123");
+		t.setNoiDungChinh("t123");
+		new TinTucDAO().suaTinTuc(t);
 		
 		
 	}

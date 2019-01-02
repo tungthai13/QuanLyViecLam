@@ -117,8 +117,8 @@
                                         <td><%=nguoidung.getKinhNghiemCongTac() %></td>
                                        	<td><%=nguoidung.getGhiChu() %></td>
                                         <td><%=nguoidung.getCv() %></td>
-										<td><a href="#">Sửa</a></td>
-                                        <td><a href="#">Xóa</a></td>
+										<td><a href="suanguoidung.jsp?idUser=<%=nguoidung.getIdUser()%>">Sửa</a></td>
+                                        <td><a href="xoaNguoiDung?idUser=<%=nguoidung.getIdUser()%>">Xóa</a></td>
                                     </tr>
                                     <%
                                     }
@@ -127,7 +127,7 @@
                                 </tbody>
                             </table>
                             <!-- /.table-responsive -->
-                            <a class="btn btn-primary" href="#">Thêm người dùng mới</a>
+                            <a class="btn btn-primary" href="themnguoidung.jsp">Thêm người dùng mới</a>
                              
                             
     </div>

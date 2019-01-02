@@ -11,6 +11,7 @@ import com.mysql.jdbc.Connection;
 import com.mysql.jdbc.PreparedStatement;
 
 import model.TinTuc;
+import model.ViecLam;
 import utility.DBConnection;
 
 public class TinTucDAO {
@@ -113,4 +114,87 @@ Connection con;
 			return null;
 			
 		}
+	  
+	  public boolean themTinTuc(TinTuc t){
+	        try {
+	            int result = 0;
+	            con = DBConnection.getConnection();
+	            String sql = "insert into tintuc (thumbnail, tieuDe, nguoiPost, ngayPost, noiDungVanTat, noiDungChinh) values (?,?,?,?,?,?)";
+	            PreparedStatement pstmt = (PreparedStatement) con.prepareStatement(sql);
+	            pstmt.setString(1, t.getThumbnail());
+	            pstmt.setString(2, t.getTieuDe());
+	            pstmt.setString(3, t.getNguoiPost());
+	            pstmt.setDate(4, t.getNgayPost());
+	            pstmt.setString(5, t.getNoiDungVanTat());
+	            pstmt.setString(6, t.getNoiDungChinh());	            
+	            int rs = pstmt.executeUpdate();
+	            
+	            return rs>0;
+	        } catch (SQLException ex) {
+	            Logger.getLogger(TinTucDAO.class.getName()).log(Level.SEVERE, null, ex);
+	            return false;
+	        } finally {
+	            try {
+	                con.close();
+	            } catch (SQLException ex) {
+	                Logger.getLogger(TinTucDAO.class.getName()).log(Level.SEVERE, null, ex);
+	            }
+	        }
+	    }
+	  
+	  public boolean xoaTinTuc(int idTinTuc){
+	        try {
+	            int result = 0;
+	            con = DBConnection.getConnection();
+	            String sql = "delete from tintuc where idTinTuc=?";
+	            PreparedStatement pstmt = (PreparedStatement) con.prepareStatement(sql);
+	            pstmt.setInt(1, idTinTuc);
+	           
+	            
+	            int rs = pstmt.executeUpdate();
+	            
+	            return rs>0;
+	        } catch (SQLException ex) {
+	            Logger.getLogger(TinTucDAO.class.getName()).log(Level.SEVERE, null, ex);
+	        } finally {
+	            try {
+	                con.close();
+	            } catch (SQLException ex) {
+	                Logger.getLogger(TinTucDAO.class.getName()).log(Level.SEVERE, null, ex);
+	            }
+	        }
+	        
+	        return false;
+	    }
+	  
+	  public boolean suaTinTuc(TinTuc t){
+	        try {
+	            int result = 0;
+	            con = DBConnection.getConnection();
+	            String sql = "update  tintuc set thumbnail = ?, tieuDe = ?, nguoiPost = ?, ngayPost = ?, noiDungVanTat = ?, noiDungChinh = ? where idTinTuc = ?";
+	            PreparedStatement pstmt = (PreparedStatement) con.prepareStatement(sql);
+	            pstmt.setString(1, t.getThumbnail());
+	            pstmt.setString(2, t.getTieuDe());
+	            pstmt.setString(3, t.getNguoiPost());
+	            pstmt.setDate(4, t.getNgayPost());
+	            pstmt.setString(5, t.getNoiDungVanTat());
+	            pstmt.setString(6, t.getNoiDungChinh());
+	            pstmt.setInt(7, t.getIdTinTuc());
+	            
+
+	            int rs = pstmt.executeUpdate();
+	            
+	            return rs>0;
+	        } catch (SQLException ex) {
+	            Logger.getLogger(TinTucDAO.class.getName()).log(Level.SEVERE, null, ex);
+	            return false;
+	        } finally {
+	            try {
+	                con.close();
+	            } catch (SQLException ex) {
+	                Logger.getLogger(TinTucDAO.class.getName()).log(Level.SEVERE, null, ex);
+	            }
+	        }
+	    }
+	  
 }

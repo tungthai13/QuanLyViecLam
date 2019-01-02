@@ -52,6 +52,66 @@
   	<description></description>
   	<servlet-class>controller.suaViecLam</servlet-class>
   </servlet>
+  <servlet>
+  	<servlet-name>themTinTuc</servlet-name>
+  	<display-name>themTinTuc</display-name>
+  	<description></description>
+  	<servlet-class>controller.themTinTuc</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>xoaTinTuc</servlet-name>
+  	<display-name>xoaTinTuc</display-name>
+  	<description></description>
+  	<servlet-class>controller.xoaTinTuc</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>suatintuc</servlet-name>
+  	<display-name>suatintuc</display-name>
+  	<description></description>
+  	<servlet-class>controller.suatintuc</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>suaTinTuc</servlet-name>
+  	<display-name>suaTinTuc</display-name>
+  	<description></description>
+  	<servlet-class>controller.suaTinTuc</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>themNguoiDung</servlet-name>
+  	<display-name>themNguoiDung</display-name>
+  	<description></description>
+  	<servlet-class>controller.themNguoiDung</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>xoaNguoiDung</servlet-name>
+  	<display-name>xoaNguoiDung</display-name>
+  	<description></description>
+  	<servlet-class>controller.xoaNguoiDung</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>suaNguoiDung</servlet-name>
+  	<display-name>suaNguoiDung</display-name>
+  	<description></description>
+  	<servlet-class>controller.suaNguoiDung</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>themHoSo</servlet-name>
+  	<display-name>themHoSo</display-name>
+  	<description></description>
+  	<servlet-class>controller.themHoSo</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>xoaHoSo</servlet-name>
+  	<display-name>xoaHoSo</display-name>
+  	<description></description>
+  	<servlet-class>controller.xoaHoSo</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>suaHoSo</servlet-name>
+  	<display-name>suaHoSo</display-name>
+  	<description></description>
+  	<servlet-class>controller.suaHoSo</servlet-class>
+  </servlet>
   <servlet-mapping>
   	<servlet-name>timKiemViecLam</servlet-name>
   	<url-pattern>/timKiemViecLam</url-pattern>
@@ -83,5 +143,45 @@
   <servlet-mapping>
   	<servlet-name>suaViecLam</servlet-name>
   	<url-pattern>/suaViecLam</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>themTinTuc</servlet-name>
+  	<url-pattern>/themTinTuc</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>xoaTinTuc</servlet-name>
+  	<url-pattern>/xoaTinTuc</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>suatintuc</servlet-name>
+  	<url-pattern>/suatintuc</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>suaTinTuc</servlet-name>
+  	<url-pattern>/suaTinTuc</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>themNguoiDung</servlet-name>
+  	<url-pattern>/themNguoiDung</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>xoaNguoiDung</servlet-name>
+  	<url-pattern>/xoaNguoiDung</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>suaNguoiDung</servlet-name>
+  	<url-pattern>/suaNguoiDung</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>themHoSo</servlet-name>
+  	<url-pattern>/themHoSo</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>xoaHoSo</servlet-name>
+  	<url-pattern>/xoaHoSo</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>suaHoSo</servlet-name>
+  	<url-pattern>/suaHoSo</url-pattern>
   </servlet-mapping>
 </web-app>

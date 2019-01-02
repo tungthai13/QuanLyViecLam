@@ -91,8 +91,8 @@
                                        	<td><%=tintuc.getNgayPost() %></td>
                                         <td><%=tintuc.getNoiDungVanTat() %></td>
                                        	<td><%=tintuc.getNoiDungChinh() %></td>
-										<td><a href="#">Sửa</a></td>
-                                        <td><a href="#">Xóa</a></td>
+										<td><a href="suatintuc.jsp?idTinTuc=<%=tintuc.getIdTinTuc()%>">Sửa</a></td>
+                                        <td><a href="xoaTinTuc?idTinTuc=<%=tintuc.getIdTinTuc()%>">Xóa</a></td>
                                     </tr>
                                     <%
                                     }
@@ -101,7 +101,7 @@
                                 </tbody>
                             </table>
                             <!-- /.table-responsive -->
-                            <a class="btn btn-primary" href="#">Thêm tin tức mới</a>
+                            <a class="btn btn-primary" href="themtintuc.jsp">Thêm tin tức mới</a>
                              
                             
     </div>

@@ -1,7 +1,7 @@
 
-<%@page import="model.TinTuc"%>
+<%@page import="model.HoSo"%>
 <%@page import="java.util.List"%>
-<%@page import="dao.TinTucDAO"%>
+<%@page import="dao.HoSoDAO"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">
@@ -14,7 +14,7 @@
         <meta name="description" content="">
         <meta name="author" content="">
 
-        <title>Them tin tức</title>
+        <title>Sửa hồ sơ</title>
 
         <!-- Bootstrap Core CSS -->
         <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -43,49 +43,74 @@
                 <div class="container-fluid">
                     <div class="row">
                         <div class="col-lg-12">
-                            <h1 class="page-header">Thêm tin tức mới</h1>
+                            <h1 class="page-header">Sửa hồ sơ </h1>
                         </div>
                         <!-- /.col-lg-12 -->
                         <div class="panel-body">
                             <div class="row">
                                 <div class="col-lg-6">
+                                
+                                 <%
+                                 String idHoSo=request.getParameter("idHoSo");
+                                 
+                                        HoSo hoso = new HoSoDAO().getHoSo(Integer.parseInt(idHoSo));
+                                
+                                     
+                                
+                                    %>
 
-                                    <form method="POST"  action="themTinTuc">
-                                        <div class="form-group">
-                                            <label>Ảnh</label>
-                                            <input type="text" minlength="5" required name="thumbnail" class="form-control">
+                                 <form method="POST"  action="suaHoSo">
+                                 <div class="form-group">
+                                           
+                                            <input minlength="5" type="hidden" value="<%=hoso.getIdHoSo() %>" name="idHoSo" class="form-control">
 
                                         </div>
                                         <div class="form-group">
-                                            <label>Tiêu đề</label>
-                                            <input type="text" required name="tieuDe" class="form-control">
+                                            <label>Họ tên</label>
+                                            <input type="text" minlength="5" required value="<%=hoso.getHoTen() %>"  name="hoTen" class="form-control">
+
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Ngày sinh</label>
+                                            <input type="date" required value="<%=hoso.getNgaySinh() %>"  name="ngaySinh" class="form-control">
 
                                         </div>
                                        
                                         <div class="form-group">
-                                            <label>Người đăng</label>
-                                            <input type="text" min="0" max="23" required name="nguoiPost" class="form-control">
+                                            <label>Email</label>
+                                            <input type="text" min="0" max="23" required value="<%=hoso.getEmail()%>"  name="email" class="form-control">
 
                                         </div>
                                         <div class="form-group">
-                                            <label>Ngày đăng</label>
-                                            <input type="date" required name="ngayPost" class="form-control">
+                                            <label>Số điện thoại</label>
+                                            <input type="text" required value="<%=hoso.getSdt() %>"  name="sdt" class="form-control">
 
                                         </div>
                                         <div class="form-group">
-                                            <label>Nội dung vắn tắt</label>
-                                            <input type="float" required name="noiDungVanTat" class="form-control">
+                                            <label>CV</label>
+                                            <input type="float" required value="<%=hoso.getCv()%>"  name="cv" class="form-control">
 
                                         </div>
                                         <div class="form-group">
-                                            <label>Nội dung chính</label>
-                                            <input type="textarea" required name="noiDungChinh" class="form-control">
+                                            <label>Nội dung ứng tuyển</label>
+                                            <input type="text" required value="<%=hoso.getNoiDungUngTuyen()%>"  name="noiDungUngTuyen" class="form-control">
+
+                                        </div>
+                                        <div class="form-group">
+                                            <label>ID người dùng</label>
+                                            <input type="float" required value="<%=hoso.getIdUser() %>"  name="idUser" class="form-control">
+
+                                        </div>
+                                        <div class="form-group">
+                                            <label>ID việc làm</label>
+                                            <input type="float" required value="<%=hoso.getIdViecLam() %>"  name="idViecLam" class="form-control">
 
                                         </div>
 
-                                        <button type="submit" class="btn btn-default">Thêm</button>
+                                        <button type="submit" class="btn btn-default">Sửa</button>
 
                                     </form>
+                                   
                                    
     </div>
     <!-- /.col-lg-6 (nested) -->

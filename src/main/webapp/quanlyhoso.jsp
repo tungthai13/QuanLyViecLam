@@ -68,7 +68,7 @@
                                         <th>Họ tên</th>
                                         <th>Ngày sinh</th>
                                         
-                                        <th>Email<</th>
+                                        <th>Email</th>
                                         <th>SĐT </th>
                                         <th>Cv</th>
                                         <th>Nội dung ứng tuyển</th>
@@ -95,8 +95,8 @@
                                        	<td><%=hoso.getNoiDungUngTuyen() %></td>
                                        	<td><%=hoso.getIdUser() %></td>
                                        	<td><%=hoso.getIdViecLam() %></td>
-										<td><a href="#">Sửa</a></td>
-                                        <td><a href="#">Xóa</a></td>
+										<td><a href="suahoso.jsp?idHoSo=<%=hoso.getIdHoSo()%>">Sửa</a></td>
+                                        <td><a href="xoaHoSo?idHoSo=<%=hoso.getIdHoSo()%>">Xóa</a></td>
                                     </tr>
                                     <%
                                     }
@@ -105,7 +105,7 @@
                                 </tbody>
                             </table>
                             <!-- /.table-responsive -->
-                            <a class="btn btn-primary" href="#">Thêm hồ sơ mới</a>
+                            <a class="btn btn-primary" href="themhoso.jsp">Thêm hồ sơ mới</a>
                              
                             
     </div>
