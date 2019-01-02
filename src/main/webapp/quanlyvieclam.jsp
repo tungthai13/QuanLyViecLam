@@ -89,10 +89,10 @@
                                         <td><%=vieclam.getTieuDe()%></td>
                                         <td><%=vieclam.getTenCongTy() %></td>
                                        	<td><%=vieclam.getDiaChi() %></td>
-                                        <td><%=vieclam.getMucLuong() %></td>
+                                        <td><%=vieclam.getMucLuong() %> triệu</td>
                                        	<td><%=vieclam.getMoTa() %></td>
-										<td><a href="#">Sửa</a></td>
-                                        <td><a href="#">Xóa</a></td>
+										<td><a href="suavieclam.jsp?idViecLam=<%=vieclam.getIdViecLam()%>">Sửa</a></td>
+                                        <td><a href="xoaViecLam?idViecLam=<%=vieclam.getIdViecLam()%>">Xóa</a></td>
                                     </tr>
                                     <%
                                     }

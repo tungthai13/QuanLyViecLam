@@ -7,7 +7,7 @@ public class ViecLam {
 	private String tieuDe;
 	private String tenCongTy;
 	private String diaChi;
-	private float mucLuong;
+	private String mucLuong;
 	private String moTa;
 	
 	
@@ -16,7 +16,7 @@ public class ViecLam {
 	}
 
 
-	public ViecLam(int idViecLam, String thumbnail, String tieuDe, String tenCongTy, String diaChi, float mucLuong,
+	public ViecLam(int idViecLam, String thumbnail, String tieuDe, String tenCongTy, String diaChi, String mucLuong,
 			String moTa) {
 		this.idViecLam = idViecLam;
 		this.thumbnail = thumbnail;
@@ -78,12 +78,18 @@ public class ViecLam {
 	}
 
 
-	public float getMucLuong() {
+	
+
+
+	
+
+
+	public String getMucLuong() {
 		return mucLuong;
 	}
 
 
-	public void setMucLuong(float mucLuong) {
+	public void setMucLuong(String mucLuong) {
 		this.mucLuong = mucLuong;
 	}
 
@@ -105,6 +111,7 @@ public class ViecLam {
 	}
 
 
+	
 	
 
 	

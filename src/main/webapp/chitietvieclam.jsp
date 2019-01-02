@@ -66,7 +66,7 @@
 
 
 				<p class="breadcrumb">Mô tả công việc: <%=chitietvieclam.getMoTa() %></p>
-				<p class="breadcrumb">Mức lương: <%=chitietvieclam.getMucLuong()%></p>
+				<p class="breadcrumb">Mức lương: <%=chitietvieclam.getMucLuong()%> triệu</p>
 				<p class="breadcrumb">Địa chỉ: <%=chitietvieclam.getDiaChi() %></p>
 
 
