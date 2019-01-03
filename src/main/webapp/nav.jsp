@@ -283,11 +283,18 @@
                                     <a href="quanlynguoidung.jsp"><i
 							class="fas fa-user-tie" style="margin-right:5px"></i>Người dùng</a>
                                 </li>
+                                <li>
+                                    <a href="quanlycongty.jsp"><i
+							class="fas fa-building" style="margin-right:5px"></i>Công ty</a>
+                                </li>
+                                <li>
+                                    <a href="quanlyadmin.jsp"><i
+							class="fas fa-user-shield" style="margin-right:5px"></i>Admin</a>
+                                </li>
                                 
                             </ul>
                         </li>
-                        
-                        
+                     
                         
                         
                     </ul>

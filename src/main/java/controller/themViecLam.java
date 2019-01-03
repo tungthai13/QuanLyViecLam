@@ -31,7 +31,7 @@ public class themViecLam extends HttpServlet {
 		request.setCharacterEncoding("UTF-8");
 		String thumbnail = request.getParameter("thumbnail");
 		String tieuDe = request.getParameter("tieuDe");
-		String tenCongTy = request.getParameter("tenCongTy");
+		String idCongTy = request.getParameter("idCongTy");
 		String diaChi = request.getParameter("diaChi");
 		String mucLuong = request.getParameter("mucLuong");
 		String moTa = request.getParameter("moTa");
@@ -40,7 +40,7 @@ public class themViecLam extends HttpServlet {
 		
 		vieclam.setThumbnail(thumbnail);
 		vieclam.setTieuDe(tieuDe);
-		vieclam.setTenCongTy(tenCongTy);
+		vieclam.setIdCongTy(Integer.parseInt(idCongTy));;
 		vieclam.setDiaChi(diaChi);
 		vieclam.setMucLuong(mucLuong);
 		vieclam.setMoTa(moTa);

@@ -14,7 +14,7 @@
         <meta name="description" content="">
         <meta name="author" content="">
 
-        <title>Sửa việc làm</title>
+        <title>Sửa tin tức</title>
 
         <!-- Bootstrap Core CSS -->
         <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -43,7 +43,7 @@
                 <div class="container-fluid">
                     <div class="row">
                         <div class="col-lg-12">
-                            <h1 class="page-header">Sửa việc làm </h1>
+                            <h1 class="page-header">Sửa tin tức </h1>
                         </div>
                         <!-- /.col-lg-12 -->
                         <div class="panel-body">

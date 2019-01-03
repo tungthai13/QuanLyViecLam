@@ -1,7 +1,7 @@
 
-<%@page import="model.ViecLam"%>
+<%@page import="model.CongTy"%>
 <%@page import="java.util.List"%>
-<%@page import="dao.ViecLamDAO"%>
+<%@page import="dao.CongTyDAO"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">
@@ -14,7 +14,7 @@
         <meta name="description" content="">
         <meta name="author" content="">
 
-        <title>Them việc làm</title>
+        <title>Them tin tức</title>
 
         <!-- Bootstrap Core CSS -->
         <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -43,45 +43,32 @@
                 <div class="container-fluid">
                     <div class="row">
                         <div class="col-lg-12">
-                            <h1 class="page-header">Thêm việc làm mới</h1>
+                            <h1 class="page-header">Thêm công ty mới</h1>
                         </div>
                         <!-- /.col-lg-12 -->
                         <div class="panel-body">
                             <div class="row">
                                 <div class="col-lg-6">
 
-                                    <form method="POST"  action="themViecLam">
+                                    <form method="POST"  action="themCongTy">
                                         <div class="form-group">
-                                            <label>Ảnh</label>
-                                            <input type="text" minlength="5" required name="thumbnail" class="form-control">
+                                            <label>Tên công ty</label>
+                                            <input type="text"  required name="tenCongTy" class="form-control">
 
                                         </div>
                                         <div class="form-group">
-                                            <label>Tiêu đề</label>
-                                            <input type="text" required name="tieuDe" class="form-control">
+                                            <label>Năm thành lập</label>
+                                            <input type="text" required name="namThanhLap" class="form-control">
 
                                         </div>
                                        
                                         <div class="form-group">
-                                            <label>ID công ty</label>
-                                            <input type="text" min="0" max="23" required name="idCongTy" class="form-control">
+                                            <label>Mã quản trị</label>
+                                            <input type="text" min="0" max="23" required name="idAdmin" class="form-control">
 
                                         </div>
-                                        <div class="form-group">
-                                            <label>Địa Chỉ</label>
-                                            <input type="text" required name="diaChi" class="form-control">
 
-                                        </div>
-                                        <div class="form-group">
-                                            <label>Mức lương</label>
-                                            <input type="float" required name="mucLuong" class="form-control">
 
-                                        </div>
-                                        <div class="form-group">
-                                            <label>Mô tả</label>
-                                            <input type="text" required name="moTa" class="form-control">
-
-                                        </div>
 
                                         <button type="submit" class="btn btn-default">Thêm</button>
 

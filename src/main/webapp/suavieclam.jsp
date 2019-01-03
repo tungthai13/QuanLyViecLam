@@ -77,8 +77,8 @@
                                         </div>
                                        
                                         <div class="form-group">
-                                            <label>Tên công ty</label>
-                                            <input type="text" min="0" max="23" value="<%=vieclam.getTenCongTy() %>" required name="tenCongTy" class="form-control">
+                                            <label>ID công ty</label>
+                                            <input type="text" min="0" max="23" value="<%=vieclam.getIdCongTy() %>" required name="idCongTy" class="form-control">
 
                                         </div>
                                         <div class="form-group">
@@ -93,7 +93,7 @@
                                         </div>
                                         <div class="form-group">
                                             <label>Mô tả</label>
-                                            <input type="text" required value="<%=vieclam.getTenCongTy() %>" name="moTa" class="form-control">
+                                            <input type="text" required value="<%=vieclam.getMoTa() %>" name="moTa" class="form-control">
 
                                         </div>
 

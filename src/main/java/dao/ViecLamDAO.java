@@ -10,6 +10,7 @@ import java.util.logging.Logger;
 import com.mysql.jdbc.Connection;
 import com.mysql.jdbc.PreparedStatement;
 
+import model.CongTy;
 import model.ViecLam;
 import utility.DBConnection;
 
@@ -22,19 +23,26 @@ public class ViecLamDAO {
 		
 		try {
 			con = DBConnection.getConnection();
-			String sql = "Select * from vieclam";
+			String sql = "Select * from vieclam join congty where vieclam.idCongTy = congty.idCongTy";
 			PreparedStatement pstm = (PreparedStatement) con.prepareStatement(sql);
 			ResultSet rs = pstm.executeQuery();
 			ViecLam vieclam;
+			CongTy congty;
 			while(rs.next()) {
 				vieclam = new ViecLam();
+				congty = new CongTy();
 				vieclam.setIdViecLam(rs.getInt("idViecLam"));
 				vieclam.setThumbnail(rs.getString("thumbnail"));
 				vieclam.setTieuDe(rs.getString("tieuDe"));
-				vieclam.setTenCongTy(rs.getString("tenCongTy"));
+				vieclam.setIdCongTy(rs.getInt("idCongTy"));
 				vieclam.setDiaChi(rs.getString("diaChi"));
 				vieclam.setMucLuong(rs.getString("mucLuong"));
 				vieclam.setMoTa(rs.getString("moTa"));
+				congty.setIdCongTy(rs.getInt("idCongTy"));
+				congty.setTenCongTy(rs.getString("tenCongTy"));
+				congty.setNamThanhLap(rs.getInt("namThanhLap"));
+				congty.setIdAdmin(rs.getInt("idAdmin"));
+				vieclam.setCongTy(congty);
 				list.add(vieclam);
 			}
 			
@@ -54,22 +62,29 @@ public class ViecLamDAO {
 	        try {
 	            con = DBConnection.getConnection();
 	            String search = "%"+timKiem+"%";
-	            String sql = "Select * from vieclam where tieuDe like ?";
+	            String sql = "Select * from vieclam JOIN congty where tieuDe like ? AND vieclam.idCongTy = congty.idCongTy";
 	            PreparedStatement pstmt = (PreparedStatement) con.prepareStatement(sql);
 	            pstmt.setString(1, search);
 	            
 	            ResultSet rs = pstmt.executeQuery();
 	            ViecLam vieclam;
-	            while(rs.next()){
-	            	vieclam = new ViecLam();
+				CongTy congty;
+				while(rs.next()) {
+					vieclam = new ViecLam();
+					congty = new CongTy();
 					vieclam.setIdViecLam(rs.getInt("idViecLam"));
 					vieclam.setThumbnail(rs.getString("thumbnail"));
 					vieclam.setTieuDe(rs.getString("tieuDe"));
-					vieclam.setTenCongTy(rs.getString("tenCongTy"));
+					vieclam.setIdCongTy(rs.getInt("idCongTy"));
 					vieclam.setDiaChi(rs.getString("diaChi"));
 					vieclam.setMucLuong(rs.getString("mucLuong"));
 					vieclam.setMoTa(rs.getString("moTa"));
-	                list.add(vieclam);
+					congty.setIdCongTy(rs.getInt("idCongTy"));
+					congty.setTenCongTy(rs.getString("tenCongTy"));
+					congty.setNamThanhLap(rs.getInt("namThanhLap"));
+					congty.setIdAdmin(rs.getInt("idAdmin"));
+					vieclam.setCongTy(congty);
+					list.add(vieclam);
 	            }
 	            
 	            return list;
@@ -90,21 +105,28 @@ public class ViecLamDAO {
 	        try {
 	            con = DBConnection.getConnection();
 
-	            String sql = "Select * from vieclam where idViecLam = ?";
+	            String sql = "SELECT * FROM vieclam JOIN congty WHERE idViecLam = ? AND vieclam.idCongTy = congty.idCongTy";
 	            PreparedStatement pstmt = (PreparedStatement) con.prepareStatement(sql);
 	            pstmt.setInt(1, idViecLam);
 	            
 	            ResultSet rs = pstmt.executeQuery();
 	            ViecLam vieclam = null;
-	            while(rs.next()){
-	            	vieclam = new ViecLam();
+				CongTy congty;
+				while(rs.next()) {
+					vieclam = new ViecLam();
+					congty = new CongTy();
 					vieclam.setIdViecLam(rs.getInt("idViecLam"));
 					vieclam.setThumbnail(rs.getString("thumbnail"));
 					vieclam.setTieuDe(rs.getString("tieuDe"));
-					vieclam.setTenCongTy(rs.getString("tenCongTy"));
+					vieclam.setIdCongTy(rs.getInt("idCongTy"));
 					vieclam.setDiaChi(rs.getString("diaChi"));
 					vieclam.setMucLuong(rs.getString("mucLuong"));
 					vieclam.setMoTa(rs.getString("moTa"));
+					congty.setIdCongTy(rs.getInt("idCongTy"));
+					congty.setTenCongTy(rs.getString("tenCongTy"));
+					congty.setNamThanhLap(rs.getInt("namThanhLap"));
+					congty.setIdAdmin(rs.getInt("idAdmin"));
+					vieclam.setCongTy(congty);
 	            }
 	            
 	            return vieclam;
@@ -135,7 +157,7 @@ public class ViecLamDAO {
 					vieclam.setIdViecLam(rs.getInt("idViecLam"));
 					vieclam.setThumbnail(rs.getString("thumbnail"));
 					vieclam.setTieuDe(rs.getString("tieuDe"));
-					vieclam.setTenCongTy(rs.getString("tenCongTy"));
+					vieclam.setIdCongTy(rs.getInt("idCongTy"));
 					vieclam.setDiaChi(rs.getString("diaChi"));
 					vieclam.setMucLuong(rs.getString("mucLuong"));
 					vieclam.setMoTa(rs.getString("moTa"));
@@ -156,11 +178,11 @@ public class ViecLamDAO {
 	        try {
 	            int result = 0;
 	            con = DBConnection.getConnection();
-	            String sql = "insert into vieclam (thumbnail, tieuDe, tenCongTy, diaChi, mucLuong, moTa) values (?,?,?,?,?,?)";
+	            String sql = "insert into vieclam (thumbnail, tieuDe, idCongTy, diaChi, mucLuong, moTa) values (?,?,?,?,?,?)";
 	            PreparedStatement pstmt = (PreparedStatement) con.prepareStatement(sql);
 	            pstmt.setString(1, v.getThumbnail());
 	            pstmt.setString(2, v.getTieuDe());
-	            pstmt.setString(3, v.getTenCongTy());
+	            pstmt.setInt(3, v.getIdCongTy());
 	            pstmt.setString(4, v.getDiaChi());
 	            pstmt.setString(5, v.getMucLuong());
 	            pstmt.setString(6, v.getMoTa());	            
@@ -208,11 +230,11 @@ public class ViecLamDAO {
 	        try {
 	            int result = 0;
 	            con = DBConnection.getConnection();
-	            String sql = "update  vieclam set thumbnail = ?, tieuDe = ?, tenCongTy = ?, diaChi = ?, mucLuong = ?, moTa = ? where idViecLam = ?";
+	            String sql = "update  vieclam set thumbnail = ?, tieuDe = ?, idCongTy = ?, diaChi = ?, mucLuong = ?, moTa = ? where idViecLam = ?";
 	            PreparedStatement pstmt = (PreparedStatement) con.prepareStatement(sql);
 	            pstmt.setString(1, v.getThumbnail());
 	            pstmt.setString(2, v.getTieuDe());
-	            pstmt.setString(3, v.getTenCongTy());
+	            pstmt.setInt(3, v.getIdCongTy());
 	            pstmt.setString(4, v.getDiaChi());
 	            pstmt.setString(5, v.getMucLuong());
 	            pstmt.setString(6, v.getMoTa());

@@ -33,7 +33,7 @@ public class suaViecLam extends HttpServlet {
 		String idViecLam = request.getParameter("idViecLam");
 		String thumbnail = request.getParameter("thumbnail");
 		String tieuDe = request.getParameter("tieuDe");
-		String tenCongTy = request.getParameter("tenCongTy");
+		String idCongTy = request.getParameter("idCongTy");
 		String diaChi = request.getParameter("diaChi");
 		String mucLuong = request.getParameter("mucLuong");
 		String moTa = request.getParameter("moTa");
@@ -42,7 +42,7 @@ public class suaViecLam extends HttpServlet {
 		vieclam.setIdViecLam(Integer.parseInt(idViecLam));
 		vieclam.setThumbnail(thumbnail);
 		vieclam.setTieuDe(tieuDe);
-		vieclam.setTenCongTy(tenCongTy);
+		vieclam.setIdCongTy(Integer.parseInt(idCongTy));
 		vieclam.setDiaChi(diaChi);
 		vieclam.setMucLuong(mucLuong);
 		vieclam.setMoTa(moTa);

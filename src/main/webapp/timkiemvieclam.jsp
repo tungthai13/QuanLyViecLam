@@ -60,7 +60,7 @@
 							style="width: 80px; height: 70px" src="<%=vieclam.getThumbnail() %>" /></td>
 						<td> <a href="chitietvieclam?id=<%=vieclam.getIdViecLam() %>" ><%=vieclam.getTieuDe() %></a>
 							<p>
-								<b>Tên công ty: <%=vieclam.getTenCongTy() %></b>
+								<b>Tên công ty: <%=vieclam.getCongTy().getTenCongTy() %></b>
 							</p></td>
 						<td><b>Mức lương: <%=vieclam.getMucLuong()%> triệu</b>
 							<p>

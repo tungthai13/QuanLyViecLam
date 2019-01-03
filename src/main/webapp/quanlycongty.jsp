@@ -1,6 +1,6 @@
 
-<%@page import="dao.ViecLamDAO"%>
-<%@page import="model.ViecLam"%>
+<%@page import="dao.CongTyDAO"%>
+<%@page import="model.CongTy"%>
 <%@page import="java.util.List"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -14,7 +14,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Quản lý việc làm</title>
+    <title>Quản lý công ty</title>
     
  
      <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -51,7 +51,7 @@
         <div id="page-wrapper">
             <div class="row">
                 <div class="col-lg-12">
-                    <h1 class="page-header">Việc làm</h1>
+                    <h1 class="page-header">Công ty</h1>
                 </div>
                 <!-- /.col-lg-12 -->
             </div>
@@ -64,35 +64,29 @@
                             <table width="100%" class="table table-striped table-bordered table-hover" id="dataTables-example">
                                 <thead>
                                     <tr>
-                                        <th>Mã việc làm</th>
-                                        <th>Ảnh</th>
-                                        <th>Tiêu đề</th>
-                                        
+                                        <th>Mã công ty </th>
                                         <th>Tên công ty</th>
-                                        <th>Địa chỉ </th>
-                                        <th>Mức lương</th>
-                                        <th>Mô tả</th>
+                                        <th>Năm thành lập</th>
+                                        
+                                        <th>Mã admin</th>
+
                                         <th>Sửa</th>
                                         <th>Xóa</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                  <%
-                                 List<ViecLam>  list =  new ViecLamDAO().tatCaViecLam();
-                                for(ViecLam vieclam : list){
-                                     
+                                 List<CongTy>  list =  new CongTyDAO().tatCaCongTy();
+                                 for(CongTy congty : list){
                                 
                                     %>
                                     <tr class="odd gradeX">
-                                        <td><%=vieclam.getIdViecLam()%></td>
-                                        <td><%=vieclam.getThumbnail()%></td>
-                                        <td><%=vieclam.getTieuDe()%></td>
-                                        <td><%=vieclam.getCongTy().getTenCongTy() %></td>
-                                       	<td><%=vieclam.getDiaChi() %></td>
-                                        <td><%=vieclam.getMucLuong() %> triệu</td>
-                                       	<td><%=vieclam.getMoTa() %></td>
-										<td><a href="suavieclam.jsp?idViecLam=<%=vieclam.getIdViecLam()%>">Sửa</a></td>
-                                        <td><a href="xoaViecLam?idViecLam=<%=vieclam.getIdViecLam()%>">Xóa</a></td>
+                                        <td><%=congty.getIdCongTy()%></td>
+                                        <td><%=congty.getTenCongTy()%></td>
+                                        <td><%=congty.getNamThanhLap()%></td>
+                                        <td><%=congty.getIdAdmin()%></td>
+										<td><a href="suacongty.jsp?idCongTy=<%=congty.getIdCongTy()%>">Sửa</a></td>
+                                        <td><a href="xoaCongTy?idCongTy=<%=congty.getIdCongTy()%>">Xóa</a></td>
                                     </tr>
                                     <%
                                     }
@@ -101,7 +95,7 @@
                                 </tbody>
                             </table>
                             <!-- /.table-responsive -->
-                            <a class="btn btn-primary" href="themvieclam.jsp">Thêm việc làm mới</a>
+                            <a class="btn btn-primary" href="themcongty.jsp">Thêm công ty mới</a>
                              
                             
     </div>

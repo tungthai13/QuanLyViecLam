@@ -76,6 +76,10 @@ a:hover {
 							class="fas fa-address-book"></i> Hồ sơ</a></li>
 					<li style="width: 100%"><a href="quanlynguoidung.jsp"><i
 							class="fas fa-user-tie"></i> Người dùng</a></li>
+					<li style="width: 100%"><a href="quanlycongty.jsp"><i
+							class="fas fa-user-tie"></i> Công ty</a></li>
+					<li style="width: 100%"><a href="quanlyadmin.jsp"><i
+							class="fas fa-user-tie"></i> Admin</a></li>
 				</ul>
 			</div>
 		</div>

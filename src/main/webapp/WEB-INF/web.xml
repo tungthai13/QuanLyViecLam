@@ -118,6 +118,42 @@
   	<description></description>
   	<servlet-class>controller.ungTuyen</servlet-class>
   </servlet>
+  <servlet>
+  	<servlet-name>themCongTy</servlet-name>
+  	<display-name>themCongTy</display-name>
+  	<description></description>
+  	<servlet-class>controller.themCongTy</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>suaCongTy</servlet-name>
+  	<display-name>suaCongTy</display-name>
+  	<description></description>
+  	<servlet-class>controller.suaCongTy</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>xoaCongTy</servlet-name>
+  	<display-name>xoaCongTy</display-name>
+  	<description></description>
+  	<servlet-class>controller.xoaCongTy</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>themAdmin</servlet-name>
+  	<display-name>themAdmin</display-name>
+  	<description></description>
+  	<servlet-class>controller.themAdmin</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>suaAdmin</servlet-name>
+  	<display-name>suaAdmin</display-name>
+  	<description></description>
+  	<servlet-class>controller.suaAdmin</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>xoaAdmin</servlet-name>
+  	<display-name>xoaAdmin</display-name>
+  	<description></description>
+  	<servlet-class>controller.xoaAdmin</servlet-class>
+  </servlet>
   <servlet-mapping>
   	<servlet-name>timKiemViecLam</servlet-name>
   	<url-pattern>/timKiemViecLam</url-pattern>
@@ -193,5 +229,29 @@
   <servlet-mapping>
   	<servlet-name>ungTuyen</servlet-name>
   	<url-pattern>/ungTuyen</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>themCongTy</servlet-name>
+  	<url-pattern>/themCongTy</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>suaCongTy</servlet-name>
+  	<url-pattern>/suaCongTy</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>xoaCongTy</servlet-name>
+  	<url-pattern>/xoaCongTy</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>themAdmin</servlet-name>
+  	<url-pattern>/themAdmin</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>suaAdmin</servlet-name>
+  	<url-pattern>/suaAdmin</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>xoaAdmin</servlet-name>
+  	<url-pattern>/xoaAdmin</url-pattern>
   </servlet-mapping>
 </web-app>

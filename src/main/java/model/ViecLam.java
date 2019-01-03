@@ -5,10 +5,11 @@ public class ViecLam {
 	private int idViecLam;
 	private String thumbnail;
 	private String tieuDe;
-	private String tenCongTy;
+	private int idCongTy;
 	private String diaChi;
 	private String mucLuong;
 	private String moTa;
+	CongTy congTy;
 	
 	
 	public ViecLam() {
@@ -16,16 +17,36 @@ public class ViecLam {
 	}
 
 
-	public ViecLam(int idViecLam, String thumbnail, String tieuDe, String tenCongTy, String diaChi, String mucLuong,
-			String moTa) {
+	
+
+
+	
+
+
+
+
+
+	public ViecLam(int idViecLam, String thumbnail, String tieuDe, int idCongTy, String diaChi, String mucLuong,
+			String moTa, CongTy congTy) {
+		super();
 		this.idViecLam = idViecLam;
 		this.thumbnail = thumbnail;
 		this.tieuDe = tieuDe;
-		this.tenCongTy = tenCongTy;
+		this.idCongTy = idCongTy;
 		this.diaChi = diaChi;
 		this.mucLuong = mucLuong;
 		this.moTa = moTa;
+		this.congTy = congTy;
 	}
+
+
+
+
+
+
+
+
+
 
 
 	public int getIdViecLam() {
@@ -58,13 +79,16 @@ public class ViecLam {
 	}
 
 
-	public String getTenCongTy() {
-		return tenCongTy;
+	
+
+
+	public int getIdCongTy() {
+		return idCongTy;
 	}
 
 
-	public void setTenCongTy(String tenCongTy) {
-		this.tenCongTy = tenCongTy;
+	public void setIdCongTy(int idCongTy) {
+		this.idCongTy = idCongTy;
 	}
 
 
@@ -103,12 +127,42 @@ public class ViecLam {
 		this.moTa = moTa;
 	}
 
+	
+
+
+	public CongTy getCongTy() {
+		return congTy;
+	}
+
+
+
+	public void setCongTy(CongTy congTy) {
+		this.congTy = congTy;
+	}
+
+
+
+
+
+
+
+
+
+
 
 	@Override
 	public String toString() {
-		return "ViecLam [idViecLam=" + idViecLam + ", thumbnail=" + thumbnail + ", tieuDe=" + tieuDe + ", tenCongTy="
-				+ tenCongTy + ", diaChi=" + diaChi + ", mucLuong=" + mucLuong + ", moTa=" + moTa + "]";
+		return "ViecLam [idViecLam=" + idViecLam + ", thumbnail=" + thumbnail + ", tieuDe=" + tieuDe + ", idCongTy="
+				+ idCongTy + ", diaChi=" + diaChi + ", mucLuong=" + mucLuong + ", moTa=" + moTa + ", congTy=" + congTy
+				+ "]";
 	}
+
+
+
+
+	
+
+	
 
 
 	

@@ -60,7 +60,7 @@
 							</small>
 						</h1>
 
-					</td> <a class="breadcrumb"><%=chitietvieclam.getTenCongTy() %></a>
+					</td> <a class="breadcrumb">Tên công ty: <%=chitietvieclam.getCongTy().getTenCongTy() %></a>
 
 				</p>
 

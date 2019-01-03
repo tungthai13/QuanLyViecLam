@@ -6,10 +6,12 @@ import java.util.List;
 
 import com.mysql.jdbc.Connection;
 
+import dao.CongTyDAO;
 import dao.LoginDAO;
 import dao.NguoiDungDAO;
 import dao.TinTucDAO;
 import dao.ViecLamDAO;
+import model.CongTy;
 import model.NguoiDung;
 import model.TinTuc;
 import model.ViecLam;
@@ -30,14 +32,8 @@ public class Test {
 		t.setNoiDungChinh("t123");
 		new TinTucDAO().suaTinTuc(t);*/
 		
-		try {
-			Connection con = DBConnection.getConnection();
-			System.out.println(con);
-		} catch (SQLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		
+		List<CongTy> list = new CongTyDAO().tatCaCongTy();
+		System.out.println(list);
 		
 	}
 

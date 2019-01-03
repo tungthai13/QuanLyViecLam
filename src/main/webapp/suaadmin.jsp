@@ -1,7 +1,9 @@
 
-<%@page import="model.ViecLam"%>
+<%@page import="dao.AdminDAO"%>
+<%@page import="model.Admin"%>
+<%@page import="model.TinTuc"%>
 <%@page import="java.util.List"%>
-<%@page import="dao.ViecLamDAO"%>
+<%@page import="dao.TinTucDAO"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">
@@ -14,7 +16,7 @@
         <meta name="description" content="">
         <meta name="author" content="">
 
-        <title>Them việc làm</title>
+        <title>Sửa Admin</title>
 
         <!-- Bootstrap Core CSS -->
         <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -43,47 +45,47 @@
                 <div class="container-fluid">
                     <div class="row">
                         <div class="col-lg-12">
-                            <h1 class="page-header">Thêm việc làm mới</h1>
+                            <h1 class="page-header">Sửa Admin </h1>
                         </div>
                         <!-- /.col-lg-12 -->
                         <div class="panel-body">
                             <div class="row">
                                 <div class="col-lg-6">
+                                
+                                 <%
+                                 String idAdmin=request.getParameter("idAdmin");
+                                 
+                                        Admin admin = new AdminDAO().getAdmin(Integer.parseInt(idAdmin));
+                                
+                                     
+                                
+                                    %>
 
-                                    <form method="POST"  action="themViecLam">
-                                        <div class="form-group">
-                                            <label>Ảnh</label>
-                                            <input type="text" minlength="5" required name="thumbnail" class="form-control">
+                                    <form method="POST"  action="suaAdmin">
+                                    <div class="form-group">
+                                           
+                                            <input minlength="5" type="hidden" value="<%=admin.getIdAdmin() %>" name="idAdmin" class="form-control">
 
                                         </div>
                                         <div class="form-group">
-                                            <label>Tiêu đề</label>
-                                            <input type="text" required name="tieuDe" class="form-control">
+                                            <label>Username</label>
+                                            <input type="text" minlength="5" required value="<%=admin.getUserName()%>" name="userName" class="form-control">
+
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Password</label>
+                                            <input type="text" required value="<%=admin.getPassword() %>" name="password" class="form-control">
 
                                         </div>
                                        
                                         <div class="form-group">
-                                            <label>ID công ty</label>
-                                            <input type="text" min="0" max="23" required name="idCongTy" class="form-control">
-
-                                        </div>
-                                        <div class="form-group">
-                                            <label>Địa Chỉ</label>
-                                            <input type="text" required name="diaChi" class="form-control">
-
-                                        </div>
-                                        <div class="form-group">
-                                            <label>Mức lương</label>
-                                            <input type="float" required name="mucLuong" class="form-control">
-
-                                        </div>
-                                        <div class="form-group">
-                                            <label>Mô tả</label>
-                                            <input type="text" required name="moTa" class="form-control">
+                                            <label>Quyền</label>
+                                            <input type="text" min="0" max="23" value="<%=admin.getQuyen()%>" required name="quyen" class="form-control">
 
                                         </div>
 
-                                        <button type="submit" class="btn btn-default">Thêm</button>
+
+                                        <button type="submit" class="btn btn-default">Sửa</button>
 
                                     </form>
                                    

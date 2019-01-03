@@ -215,7 +215,7 @@
 					</ul>
 				</div>
 				<div class="col-lg-6">
-					<img class="img-fluid rounded" src="resources/sm.jpg" alt="">
+					<img class="img-fluid rounded" src="resources/job.png" alt="">
 				</div>
 			</div>
 
