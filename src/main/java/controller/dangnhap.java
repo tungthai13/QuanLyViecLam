@@ -55,7 +55,26 @@ public class dangnhap extends HttpServlet {
 			while(rs.next()) {
 				HttpSession session = request.getSession(true);
 				NguoiDung user = new NguoiDung();
+				user.setIdUser(rs.getInt("idUser"));
 				user.setUserName(username);
+				user.setPassword(rs.getString("password"));				
+				user.setHoTen(rs.getString("hoTen"));
+				user.setEmail(rs.getString("email"));
+				user.setSdt(rs.getInt("sdt"));
+				user.setPhanQuyen(rs.getString("phanQuyen"));
+				user.setViTriUngTuyen(rs.getString("viTriUngTuyen"));
+				user.setAnh(rs.getString("anh"));
+				user.setSkype(rs.getString("skype"));
+				user.setFacebook(rs.getString("facebook"));
+				user.setQueQuan(rs.getString("queQuan"));
+				user.setHocVan(rs.getString("hocVan"));
+				user.setTruong(rs.getString("truong"));
+				user.setKhoa(rs.getString("khoa"));
+				user.setNamTotNghiep(rs.getInt("namTotNghiep"));
+				user.setKyNang(rs.getString("kyNang"));
+				user.setKinhNghiemCongTac(rs.getString("kinhNghiemCongTac"));
+				user.setGhiChu(rs.getString("ghiChu"));
+				user.setCv(rs.getString("cv"));
 				session.setAttribute("user", user);
 				request.getRequestDispatcher("trangchu.jsp").forward(request, response);
 			}
@@ -89,7 +108,26 @@ public class dangnhap extends HttpServlet {
 			while(rs.next()) {
 				HttpSession session = request.getSession(true);
 				NguoiDung user = new NguoiDung();
+				user.setIdUser(rs.getInt("idUser"));
 				user.setUserName(username);
+				user.setPassword(rs.getString("password"));				
+				user.setHoTen(rs.getString("hoTen"));
+				user.setEmail(rs.getString("email"));
+				user.setSdt(rs.getInt("sdt"));
+				user.setPhanQuyen(rs.getString("phanQuyen"));
+				user.setViTriUngTuyen(rs.getString("viTriUngTuyen"));
+				user.setAnh(rs.getString("anh"));
+				user.setSkype(rs.getString("skype"));
+				user.setFacebook(rs.getString("facebook"));
+				user.setQueQuan(rs.getString("queQuan"));
+				user.setHocVan(rs.getString("hocVan"));
+				user.setTruong(rs.getString("truong"));
+				user.setKhoa(rs.getString("khoa"));
+				user.setNamTotNghiep(rs.getInt("namTotNghiep"));
+				user.setKyNang(rs.getString("kyNang"));
+				user.setKinhNghiemCongTac(rs.getString("kinhNghiemCongTac"));
+				user.setGhiChu(rs.getString("ghiChu"));
+				user.setCv(rs.getString("cv"));
 				session.setAttribute("user", user);
 				request.getRequestDispatcher("trangchu.jsp").forward(request, response);
 			}

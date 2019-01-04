@@ -154,6 +154,24 @@
   	<description></description>
   	<servlet-class>controller.xoaAdmin</servlet-class>
   </servlet>
+  <servlet>
+  	<servlet-name>trangCaNhan</servlet-name>
+  	<display-name>trangCaNhan</display-name>
+  	<description></description>
+  	<servlet-class>controller.trangCaNhan</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>chinhSuaThongTinCaNhan</servlet-name>
+  	<display-name>chinhSuaThongTinCaNhan</display-name>
+  	<description></description>
+  	<servlet-class>controller.chinhSuaThongTinCaNhan</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>suaThongTinCaNhan</servlet-name>
+  	<display-name>suaThongTinCaNhan</display-name>
+  	<description></description>
+  	<servlet-class>controller.suaThongTinCaNhan</servlet-class>
+  </servlet>
   <servlet-mapping>
   	<servlet-name>timKiemViecLam</servlet-name>
   	<url-pattern>/timKiemViecLam</url-pattern>
@@ -253,5 +271,17 @@
   <servlet-mapping>
   	<servlet-name>xoaAdmin</servlet-name>
   	<url-pattern>/xoaAdmin</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>trangCaNhan</servlet-name>
+  	<url-pattern>/trangCaNhan</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>chinhSuaThongTinCaNhan</servlet-name>
+  	<url-pattern>/chinhSuaThongTinCaNhan</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>suaThongTinCaNhan</servlet-name>
+  	<url-pattern>/suaThongTinCaNhan</url-pattern>
   </servlet-mapping>
 </web-app>

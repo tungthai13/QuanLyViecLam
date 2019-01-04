@@ -42,7 +42,7 @@
 				<li class="nav-item"><a class="nav-link" href="dangnhap.jsp">Đăng
 						nhập</a></li>
 				<% } else { %>
-					<li class="nav-item"><a class="nav-link" href="#">Xin chào <%=user.getUserName()%></a></li>
+					<li class="nav-item"><a class="nav-link" href="trangCaNhan">Xin chào <%=user.getUserName()%></a></li>
 					<li class="nav-item"><a class="nav-link" href="DangXuat">Đăng xuất</a></li>
 				<% } %>
 				<sec:authorize access="isAuthenticated()">

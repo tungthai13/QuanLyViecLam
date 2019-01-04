@@ -51,7 +51,7 @@ public class suaNguoiDung extends HttpServlet {
 		String kyNang = request.getParameter("kyNang");
 		String kinhNghiemCongTac = request.getParameter("kinhNghiemCongTac");
 		String ghiChu = request.getParameter("ghiChu");
-		String cv = request.getParameter("cv");
+		
 		
 		NguoiDung nguoidung = new NguoiDung();
 		
@@ -74,11 +74,13 @@ public class suaNguoiDung extends HttpServlet {
 		nguoidung.setKyNang(kyNang);
 		nguoidung.setKinhNghiemCongTac(kinhNghiemCongTac);
 		nguoidung.setGhiChu(ghiChu);
-		nguoidung.setCv(cv);
+		nguoidung.setCv("");
 		
 		
 		new NguoiDungDAO().suaNguoiDung(nguoidung);
-		request.getRequestDispatcher("quanlynguoidung.jsp").forward(request, response);
+		
+		
+		request.getRequestDispatcher("trangcanhan.jsp").forward(request, response);
 	}
 
 	/**
