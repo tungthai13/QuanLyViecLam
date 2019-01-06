@@ -15,7 +15,7 @@ public class DBConnection {
 	            Connection conn = null;
 	            Class.forName("com.mysql.jdbc.Driver").newInstance();
 
-	            conn = (Connection) DriverManager.getConnection("jdbc:mysql://localhost:3306/job","root", "");
+	            conn = (Connection) DriverManager.getConnection("jdbc:mysql://localhost:3306/job?characterEncoding=utf-8","root", "");
 	         
 	            if(conn!= null){
 	                System.out.println();

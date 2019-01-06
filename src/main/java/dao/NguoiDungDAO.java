@@ -180,29 +180,28 @@ Connection con;
 	        try {
 	            int result = 0;
 	            con = DBConnection.getConnection();
-	            String sql = "update  nguoidung set userName = ?, password = ?, hoTen = ?, email = ?, sdt = ?, phanQuyen = ?, viTriUngTuyen =?, anh =?, skype=?, facebook=?,queQuan=?,hocVan=?,truong=?,khoa=?,namTotNghiep=?,kyNang=?,kinhNghiemCongTac=?,ghiChu=?,cv=? where idUser = ?";
+	            String sql = "update  nguoidung set hoTen = ?, email = ?, sdt = ?, phanQuyen = ?, viTriUngTuyen =?, anh =?, skype=?, facebook=?,queQuan=?,hocVan=?,truong=?,khoa=?,namTotNghiep=?,kyNang=?,kinhNghiemCongTac=?,ghiChu=?,cv=? where idUser = ?";
 	            PreparedStatement pstmt = (PreparedStatement) con.prepareStatement(sql);
 	            
-	            pstmt.setString(1, n.getUserName());
-	            pstmt.setString(2, n.getPassword());
-	            pstmt.setString(3, n.getHoTen());
-	            pstmt.setString(4, n.getEmail());
-	            pstmt.setInt(5, n.getSdt());
-	            pstmt.setString(6, n.getPhanQuyen());
-	            pstmt.setString(7, n.getViTriUngTuyen());
-	            pstmt.setString(8, n.getAnh());
-	            pstmt.setString(9, n.getSkype());
-	            pstmt.setString(10, n.getFacebook());
-	            pstmt.setString(11, n.getQueQuan());
-	            pstmt.setString(12, n.getHocVan());
-	            pstmt.setString(13, n.getTruong());
-	            pstmt.setString(14, n.getKhoa());
-	            pstmt.setInt(15, n.getNamTotNghiep());
-	            pstmt.setString(16, n.getKyNang());
-	            pstmt.setString(17, n.getKinhNghiemCongTac());
-	            pstmt.setString(18, n.getGhiChu());
-	            pstmt.setString(19, n.getCv());
-	            pstmt.setInt(20, n.getIdUser());
+	           
+	            pstmt.setString(1, n.getHoTen());
+	            pstmt.setString(2, n.getEmail());
+	            pstmt.setInt(3, n.getSdt());
+	            pstmt.setString(4, n.getPhanQuyen());
+	            pstmt.setString(5, n.getViTriUngTuyen());
+	            pstmt.setString(6, n.getAnh());
+	            pstmt.setString(7, n.getSkype());
+	            pstmt.setString(8, n.getFacebook());
+	            pstmt.setString(9, n.getQueQuan());
+	            pstmt.setString(10, n.getHocVan());
+	            pstmt.setString(11, n.getTruong());
+	            pstmt.setString(12, n.getKhoa());
+	            pstmt.setInt(13, n.getNamTotNghiep());
+	            pstmt.setString(14, n.getKyNang());
+	            pstmt.setString(15, n.getKinhNghiemCongTac());
+	            pstmt.setString(16, n.getGhiChu());
+	            pstmt.setString(17, n.getCv());
+	            pstmt.setInt(18, n.getIdUser());
 	           
 	            
 	            int rs = pstmt.executeUpdate();

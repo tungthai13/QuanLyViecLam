@@ -104,10 +104,10 @@ public class dangnhap extends HttpServlet {
 			pstm.setString(1, username);
 			pstm.setString(2, password);
 			ResultSet rs = pstm.executeQuery();
-			
+			NguoiDung user = null;
 			while(rs.next()) {
 				HttpSession session = request.getSession(true);
-				NguoiDung user = new NguoiDung();
+				user = new NguoiDung();
 				user.setIdUser(rs.getInt("idUser"));
 				user.setUserName(username);
 				user.setPassword(rs.getString("password"));				
@@ -131,7 +131,12 @@ public class dangnhap extends HttpServlet {
 				session.setAttribute("user", user);
 				request.getRequestDispatcher("trangchu.jsp").forward(request, response);
 			}
-			response.sendRedirect("error.jsp");
+			
+			if (user == null) {
+				request.getRequestDispatcher("error.jsp").forward(request, response);
+			}
+			
+
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
