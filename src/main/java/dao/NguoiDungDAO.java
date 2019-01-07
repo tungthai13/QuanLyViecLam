@@ -218,4 +218,76 @@ Connection con;
 	            }
 	        }
 	    }
+	  
+	  public boolean dangky(String userName,String password){
+	        try {
+	            int result = 0;
+	            con = DBConnection.getConnection();
+	            String sql = "insert into nguoidung (userName, password) values (?,?)";
+	            PreparedStatement pstmt = (PreparedStatement) con.prepareStatement(sql);
+	            pstmt.setString(1,userName);
+	            pstmt.setString(2, password);
+	           
+	            int rs = pstmt.executeUpdate();
+	            
+	            return rs>0;
+	        } catch (SQLException ex) {
+	            Logger.getLogger(NguoiDungDAO.class.getName()).log(Level.SEVERE, null, ex);
+	            return false;
+	        } finally {
+	            try {
+	                con.close();
+	            } catch (SQLException ex) {
+	                Logger.getLogger(NguoiDungDAO.class.getName()).log(Level.SEVERE, null, ex);
+	            }
+	        }
+	    }
+	  
+	  public NguoiDung getNguoiDungByUserName(String userName){
+	        try {
+	            con = DBConnection.getConnection();
+
+	            String sql = "Select * from nguoidung where userName = ?";
+	            PreparedStatement pstmt = (PreparedStatement) con.prepareStatement(sql);
+	            pstmt.setString(1, userName);
+	            
+	            ResultSet rs = pstmt.executeQuery();
+	            NguoiDung nguoidung = null;
+	            while(rs.next()){
+	            	nguoidung = new NguoiDung();
+					nguoidung.setIdUser(rs.getInt("idUser"));
+					nguoidung.setUserName(rs.getString("userName"));
+					nguoidung.setPassword(rs.getString("password"));				
+					nguoidung.setHoTen(rs.getString("hoTen"));
+					nguoidung.setEmail(rs.getString("email"));
+					nguoidung.setSdt(rs.getInt("sdt"));
+					nguoidung.setPhanQuyen(rs.getString("phanQuyen"));
+					nguoidung.setViTriUngTuyen(rs.getString("viTriUngTuyen"));
+					nguoidung.setAnh(rs.getString("anh"));
+					nguoidung.setSkype(rs.getString("skype"));
+					nguoidung.setFacebook(rs.getString("facebook"));
+					nguoidung.setQueQuan(rs.getString("queQuan"));
+					nguoidung.setHocVan(rs.getString("hocVan"));
+					nguoidung.setTruong(rs.getString("truong"));
+					nguoidung.setKhoa(rs.getString("khoa"));
+					nguoidung.setNamTotNghiep(rs.getInt("namTotNghiep"));
+					nguoidung.setKyNang(rs.getString("kyNang"));
+					nguoidung.setKinhNghiemCongTac(rs.getString("kinhNghiemCongTac"));
+					nguoidung.setGhiChu(rs.getString("ghiChu"));
+					nguoidung.setCv(rs.getString("cv"));
+	            }
+	            
+	            return nguoidung;
+	        } catch (SQLException ex) {
+	            Logger.getLogger(NguoiDungDAO.class.getName()).log(Level.SEVERE, null, ex);
+	        } finally {
+	            try {
+	                con.close();
+	            } catch (SQLException ex) {
+	                Logger.getLogger(NguoiDungDAO.class.getName()).log(Level.SEVERE, null, ex);
+	            }
+	        }
+	        return null;
+	    }
+	
 }

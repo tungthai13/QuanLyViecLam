@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <html lang="en">
    <head>
-<title>Thất bại</title>
+<title>Thành Công</title>
 <script src="js/jquery.min.js"></script>
 <!-- Custom Theme files -->
 <link href="css/style.css" rel="stylesheet" type="text/css" media="all"/>
@@ -20,14 +20,14 @@
 <!--header start here-->
 <div class="header">
 		<div class="header-main">
-		       <h1 style="color:red"><blink>Đăng ký thất bại</blink></h1>
+		       <h1 style="color:green"><blink>Đăng ký thành công</blink></h1>
 				<div class="header-bottom">
 				<div class="header-right w3agile">
 					
 					<div class="header-left-bottom agileinfo">
 						
-					 <form action="dangky.jsp">
-					<input type="submit" value="Quay lại trang đăng ký">
+					 <form action="dangnhap.jsp">
+					<input type="submit" value="Đăng nhập">
 					</form>	
 				
 					

@@ -34,7 +34,7 @@ public class Test {
 		t.setNoiDungChinh("t123");
 		new TinTucDAO().suaTinTuc(t);*/
 		
-		Connection con;
+		/*Connection con;
 		try {
 			con = DBConnection.getConnection();
 			String sql = "Select * from nguoidung where userName =? and password = ?";
@@ -73,6 +73,11 @@ public class Test {
 			e.printStackTrace();
 		}
 		
+		
+	}*/
+	
+		NguoiDung a = new NguoiDungDAO().getNguoiDungByUserName("ntlong0410");
+		System.out.println(a);
 		
 	}
 
