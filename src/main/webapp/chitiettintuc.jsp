@@ -114,9 +114,7 @@
 				
 
 
-				<div>
-					<button class="btn btn-success btn-lg">Làm hồ sơ ngay</button>
-				</div>
+				
 
 			</div>
 			

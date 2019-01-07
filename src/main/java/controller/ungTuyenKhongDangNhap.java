@@ -7,22 +7,20 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 
 import dao.HoSoDAO;
 import model.HoSo;
-import model.NguoiDung;
 
 /**
- * Servlet implementation class ungTuyen
+ * Servlet implementation class ungTuyenKhongDangNhap
  */
-public class ungTuyen extends HttpServlet {
+public class ungTuyenKhongDangNhap extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public ungTuyen() {
+    public ungTuyenKhongDangNhap() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -31,28 +29,27 @@ public class ungTuyen extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
-		response.setContentType("text/html;charset=UTF-8");
-		request.setCharacterEncoding("UTF-8");
-		
-		HttpSession session = request.getSession();
-		NguoiDung user = (NguoiDung) session.getAttribute("user");
-		
-		System.out.println(user.getNgaySinh());
+		String hoTen = request.getParameter("hoTen");
+		String ngaySinh = request.getParameter("ngaySinh");
+		String email = request.getParameter("email");
+		String sdt = request.getParameter("sdt");
+		String cv =null;
+		String noiDungUngTuyen = request.getParameter("noiDungUngTuyen");
+		int idUser = 0;
 		String idViecLam = request.getParameter("idViecLam");
 		
 		HoSo hoso = new HoSo();
 		
-		hoso.setHoTen(user.getHoTen());
-		hoso.setNgaySinh(user.getNgaySinh());
-		hoso.setEmail(user.getEmail());
-		hoso.setSdt(user.getSdt());
-		hoso.setCv(user.getCv());
-		hoso.setNoiDungUngTuyen(user.getViTriUngTuyen());
-		hoso.setIdUser(user.getIdUser());
+		hoso.setHoTen(hoTen);
+		hoso.setNgaySinh(Date.valueOf(ngaySinh));
+		hoso.setEmail(email);
+		hoso.setSdt(Integer.parseInt(sdt));
+		hoso.setCv(cv);
+		hoso.setNoiDungUngTuyen(noiDungUngTuyen);
+		hoso.setIdUser(0);
 		hoso.setIdViecLam(Integer.parseInt(idViecLam));
 		
-		new HoSoDAO().ungTuyenCoDangNhap(hoso);
+		new HoSoDAO().ungTuyen(hoso);
 		request.getRequestDispatcher("ungtuyenthanhcong.jsp").forward(request, response);
 	}
 

@@ -379,6 +379,17 @@
 														<input type="text" id="form-field-1" name="ghiChu"
 															value="<%=user.getGhiChu()%>" class="col-xs-10 col-sm-5" />
 													</div>
+													
+												</div>
+												<div class="form-group">
+													<label class="col-sm-3 control-label no-padding-right"
+														for="form-field-1"> Ngày sinh</label>
+
+													<div class="col-sm-9">
+														<input type="date" id="form-field-1" name="ngaySinh"
+															value="<%=user.getNgaySinh()%>" class="col-xs-10 col-sm-5" />
+													</div>
+													
 												</div>
 
 

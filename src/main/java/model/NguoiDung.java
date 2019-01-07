@@ -1,5 +1,7 @@
 package model;
 
+import java.sql.Date;
+
 public class NguoiDung {
 
 	private int idUser;
@@ -22,17 +24,20 @@ public class NguoiDung {
 	private String kinhNghiemCongTac;
 	private String ghiChu;
 	private String cv;
-	
+	private Date ngaySinh;
 	
 	public NguoiDung() {
 		
 	}
 
 
+	
+
 	public NguoiDung(int idUser, String userName, String password, String hoTen, String email, int sdt,
 			String phanQuyen, String viTriUngTuyen, String anh, String skype, String facebook, String queQuan,
 			String hocVan, String truong, String khoa, int namTotNghiep, String kyNang, String kinhNghiemCongTac,
-			String ghiChu, String cv) {
+			String ghiChu, String cv, Date ngaySinh) {
+		super();
 		this.idUser = idUser;
 		this.userName = userName;
 		this.password = password;
@@ -53,7 +58,10 @@ public class NguoiDung {
 		this.kinhNghiemCongTac = kinhNghiemCongTac;
 		this.ghiChu = ghiChu;
 		this.cv = cv;
+		this.ngaySinh = ngaySinh;
 	}
+
+
 
 
 	public int getIdUser() {
@@ -256,15 +264,34 @@ public class NguoiDung {
 	}
 
 
+	
+	public Date getNgaySinh() {
+		return ngaySinh;
+	}
+
+
+
+
+	public void setNgaySinh(Date ngaySinh) {
+		this.ngaySinh = ngaySinh;
+	}
+
+
+
+
 	@Override
 	public String toString() {
 		return "NguoiDung [idUser=" + idUser + ", userName=" + userName + ", password=" + password + ", hoTen=" + hoTen
 				+ ", email=" + email + ", sdt=" + sdt + ", phanQuyen=" + phanQuyen + ", viTriUngTuyen=" + viTriUngTuyen
 				+ ", anh=" + anh + ", skype=" + skype + ", facebook=" + facebook + ", queQuan=" + queQuan + ", hocVan="
 				+ hocVan + ", truong=" + truong + ", khoa=" + khoa + ", namTotNghiep=" + namTotNghiep + ", kyNang="
-				+ kyNang + ", kinhNghiemCongTac=" + kinhNghiemCongTac + ", ghiChu=" + ghiChu + ", cv=" + cv + "]";
+				+ kyNang + ", kinhNghiemCongTac=" + kinhNghiemCongTac + ", ghiChu=" + ghiChu + ", cv=" + cv
+				+ ", ngaySinh=" + ngaySinh + "]";
 	}
-	
+
+
+
+
 	
 	
 	

@@ -72,6 +72,7 @@
 
 
 			</div>
+			
 
 			<div class="col-md-4">
 
@@ -113,11 +114,25 @@
 
 				
 
-
+		<%
+		if(user == null){
+			
+		
+		%>
 				<div>
-					<button class="btn btn-success btn-lg"><a style="color:white" href="ungTuyen.jsp?idViecLam=<%=chitietvieclam.getIdViecLam()%>">Làm hồ sơ ngay</a></button>
+					<button class="btn btn-success btn-lg"><a style="color:white" href="ungTuyen.jsp?idViecLam=<%=chitietvieclam.getIdViecLam()%>">Ứng tuyển ngay</a></button>
 				</div>
-
+			<% } %>	
+				
+		<%
+		if(user != null){
+			
+		
+		%>
+				<div>
+					<button class="btn btn-success btn-lg"><a style="color:white" href="ungTuyen?idViecLam=<%=chitietvieclam.getIdViecLam()%>">Ứng tuyển ngay</a></button>
+				</div>
+		<% } %>
 			</div>
 		</div>
 	</div>

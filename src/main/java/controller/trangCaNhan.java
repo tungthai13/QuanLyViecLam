@@ -30,6 +30,10 @@ public class trangCaNhan extends HttpServlet {
 		HttpSession session = request.getSession();
 
 		NguoiDung user = (NguoiDung) session.getAttribute("user");
+		
+		String idViecLam = request.getParameter("idViecLam");
+		System.out.println(user.getNgaySinh());
+		
 		request.setAttribute("user", user);
 		request.getRequestDispatcher("trangcanhan.jsp").forward(request, response);
 		

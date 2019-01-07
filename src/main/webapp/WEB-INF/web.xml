@@ -196,6 +196,12 @@
 		<description></description>
 		<servlet-class>controller.dangKy</servlet-class>
 	</servlet>
+	<servlet>
+		<servlet-name>ungTuyenKhongDangNhap</servlet-name>
+		<display-name>ungTuyenKhongDangNhap</display-name>
+		<description></description>
+		<servlet-class>controller.ungTuyenKhongDangNhap</servlet-class>
+	</servlet>
 	<servlet-mapping>
 		<servlet-name>timKiemViecLam</servlet-name>
 		<url-pattern>/timKiemViecLam</url-pattern>
@@ -319,5 +325,9 @@
 	<servlet-mapping>
 		<servlet-name>dangKy</servlet-name>
 		<url-pattern>/dangKy</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>ungTuyenKhongDangNhap</servlet-name>
+		<url-pattern>/ungTuyenKhongDangNhap</url-pattern>
 	</servlet-mapping>
 </web-app>
