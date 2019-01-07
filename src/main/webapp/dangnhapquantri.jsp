@@ -1,7 +1,8 @@
-
-<!DOCTYPE HTML>
-<html>
-<head>
+<%@page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html lang="en">
+   <head>
 <title>Quản tri</title>
 <script src="js/jquery.min.js"></script>
 <!-- Custom Theme files -->
@@ -25,9 +26,9 @@
 					
 					<div class="header-left-bottom agileinfo">
 						
-					 <form action="#" method="post">
-						<input type="text"  value="User name" name="name" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'User name';}"/>
-					<input type="password"  value="Password" name="password" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'password';}"/>
+					 <form action="dangNhapQuanTri" method="post">
+						<input type="text"  value="Tên đăng nhập" name="userName" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'User name';}"/>
+						<input type="password"  value="Mật khẩu" name="password" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'password';}"/>
 						<div class="remember">
 			             <span class="checkbox1">
 							   <label class="checkbox"><input type="checkbox" name="" checked=""><i> </i>Remember me</label>

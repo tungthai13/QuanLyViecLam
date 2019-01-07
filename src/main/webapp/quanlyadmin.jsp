@@ -77,16 +77,16 @@
                                 <tbody>
                                  <%
                                  List<Admin>  list =  new AdminDAO().tatCaAdmin();
-                                 for(Admin admin : list){
+                                 for(Admin admin1 : list){
                                 
                                     %>
                                     <tr class="odd gradeX">
-                                        <td><%=admin.getIdAdmin()%></td>
-                                        <td><%=admin.getUserName()%></td>
-                                        <td><%=admin.getPassword()%></td>
-                                        <td><%=admin.getQuyen()%></td>
-										<td><a href="suaadmin.jsp?idAdmin=<%=admin.getIdAdmin()%>">Sửa</a></td>
-                                        <td><a href="xoaAdmin?idAdmin=<%=admin.getIdAdmin()%>">Xóa</a></td>
+                                        <td><%=admin1.getIdAdmin()%></td>
+                                        <td><%=admin1.getUserName()%></td>
+                                        <td><%=admin1.getPassword()%></td>
+                                        <td><%=admin1.getQuyen()%></td>
+										<td><a href="suaadmin.jsp?idAdmin=<%=admin1.getIdAdmin()%>">Sửa</a></td>
+                                        <td><a href="xoaAdmin?idAdmin=<%=admin1.getIdAdmin()%>">Xóa</a></td>
                                     </tr>
                                     <%
                                     }
