@@ -41,10 +41,7 @@
 					   
 						<input type="submit" value="Login">
 					</form>	
-					<div class="header-left-top">
-						<div class="sign-up"> <h2>or</h2> </div>
 					
-					</div>
 					
 						
 				</div>
