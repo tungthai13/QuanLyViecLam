@@ -1,3 +1,4 @@
+<%@page import="model.TrangThaiUngTuyen"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 	<%@page import="dao.NguoiDungDAO"%>
@@ -87,8 +88,8 @@
 							<a data-toggle="dropdown" href="#" class="dropdown-toggle">
 								<img class="nav-user-photo" src="assets/images/avatars/profile-pic.jpg" alt="" />
 								<span class="user-info">
-									<small>Welcome,</small>
-									<%=user.getUserName() %>
+									<small>Welcome,<%=user.getHoTen() %></small>
+									
 								</span>
 
 								<i class="ace-icon fa fa-caret-down"></i>
@@ -174,8 +175,7 @@
 														<a href="#" class="user-title-label dropdown-toggle" data-toggle="dropdown">
 															<i class="ace-icon fa fa-circle light-green"></i>
 															&nbsp;
-															<span class="white"><%=user.getHoTen()
-																	%></span>
+															<span class="white"><%=user.getHoTen() %></span>
 														</a>
 
 														<ul class="align-left dropdown-menu dropdown-caret dropdown-lighter">
@@ -223,100 +223,47 @@
 											
 
 											<div class="space-12"></div>
+											<h1>Những việc làm đã ứng tuyển</h1>
 											
-											
+										<table width="100%" class="table table-striped table-bordered table-hover" id="dataTables-example">
+                                <thead>
+  
+                                    <tr>
+                                        <th>Tên việc làm </th>
+                                        <th>Trạng thái</th>
+                                    
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                 
+                 					<%
+                 					List<TrangThaiUngTuyen>  list = (List<TrangThaiUngTuyen>) request.getAttribute("listUngTuyen");
+                             		for(TrangThaiUngTuyen trangthaiungtuyen : list){
+                             			
+                             	
+                                     
+                                
+                                    %>
+                                    <tr class="odd gradeX">
+                                        <td><%=trangthaiungtuyen.getTieuDe() %></td>
+                                        <td><%=trangthaiungtuyen.getTrangThai() %></td>
+                                
+                                   <%} %>
+                                   
+                                </tbody>
+                            </table>
+                            <div class="clearfix form-actions">
+													<div class="col-md-offset-3 col-md-9">
+													 &nbsp;
+														&nbsp; &nbsp;
+														<button class="btn" type="reset">
+															<a style="color: white" href="trangCaNhan"><i
+																class="fas fa-arrow-left"></i> Quay lại</a>
 
-											<div class="profile-user-info profile-user-info-striped">
-												<div class="profile-info-row">
-													<div class="profile-info-name"> Họ tên </div>
-
-													<div class="profile-info-value">
-														<span class="editable" id="hoTen"><%=user.getHoTen() %></span>
+														</button>
 													</div>
 												</div>
 
-												<div class="profile-info-row">
-													<div class="profile-info-name"> Quê quán </div>
-
-													<div class="profile-info-value">
-														<i class="fa fa-map-marker light-orange bigger-110"></i>
-														
-														<span class="editable" id="city"><%=user.getQueQuan() %></span>
-													</div>
-												</div>
-
-												<div class="profile-info-row">
-													<div class="profile-info-name"> Tuổi </div>
-
-													<div class="profile-info-value">
-														<span class="editable" id="age">23</span>
-													</div>
-												</div>
-
-												<div class="profile-info-row">
-													<div class="profile-info-name"> Email </div>
-
-													<div class="profile-info-value">
-														<span class="editable" id="signup"><%=user.getEmail() %></span>
-													</div>
-												</div>
-
-												<div class="profile-info-row">
-													<div class="profile-info-name"> Số điện thoại </div>
-
-													<div class="profile-info-value">
-														<span class="editable" id="login"><%=user.getSdt() %></span>
-													</div>
-												</div>
-
-												<div class="profile-info-row">
-													<div class="profile-info-name"> Vị trí mong muốn </div>
-
-													<div class="profile-info-value">
-														<span class="editable" id="about"><%=user.getViTriUngTuyen() %></span>
-													</div>
-												</div>
-												<div class="profile-info-row">
-													<div class="profile-info-name"> Kinh nghiệm </div>
-
-													<div class="profile-info-value">
-														<span class="editable" id="about"><%=user.getKinhNghiemCongTac() %></span>
-													</div>
-												</div>
-												<div class="profile-info-row">
-													<div class="profile-info-name"> Trường </div>
-
-													<div class="profile-info-value">
-														<span class="editable" id="about"><%=user.getTruong() %></span>
-													</div>
-												</div>
-												<div class="profile-info-row">
-													<div class="profile-info-name"> Kỹ năng </div>
-
-													<div class="profile-info-value">
-														<span class="editable" id="about"><%=user.getKyNang() %></span>
-													</div>
-												</div>
-												
-												
-											</div>
-											
-									<div class="clearfix form-actions">
-										<div class="col-md-offset-3 col-md-9">
-											<button class="btn btn-info" type="button">
-											<a style="color:white" href="chinhSuaThongTinCaNhan"><i class="fas fa-wrench"></i>
-												Chỉnh sửa</a>
-												
-											</button>
-
-											&nbsp; &nbsp; &nbsp;
-											<button class="btn btn-info" type="button">
-											<a style="color:white" href="theoDoiTrangThaiUngTuyen?idUser=<%=user.getIdUser() %>"><i class="fas fa-wrench"></i>
-												Theo dõi trạng thái ứng tuyển</a>
-												
-											</button>
-										</div>
-									</div>
 
 											<div class="space-20"></div>
 

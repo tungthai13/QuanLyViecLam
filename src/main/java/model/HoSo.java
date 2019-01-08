@@ -13,6 +13,8 @@ public class HoSo {
 	private String noiDungUngTuyen;
 	private int idUser;
 	private int idViecLam;
+	ViecLam viecLam;
+	UngTuyen ungTuyen;
 	
 	public HoSo() {
 		
@@ -103,12 +105,31 @@ public class HoSo {
 		this.idViecLam = idViecLam;
 	}
 
+	
+	public ViecLam getViecLam() {
+		return viecLam;
+	}
+
+	public void setViecLam(ViecLam viecLam) {
+		this.viecLam = viecLam;
+	}
+
+	public UngTuyen getUngTuyen() {
+		return ungTuyen;
+	}
+
+	public void setUngTuyen(UngTuyen ungTuyen) {
+		this.ungTuyen = ungTuyen;
+	}
+
 	@Override
 	public String toString() {
-		return "HoSoUngTuyen [idHoSo=" + idHoSo + ", hoTen=" + hoTen + ", ngaySinh=" + ngaySinh + ", email=" + email
-				+ ", sdt=" + sdt + ", cv=" + cv + ", noiDungUngTuyen=" + noiDungUngTuyen + ", idUser=" + idUser
-				+ ", idViecLam=" + idViecLam + "]";
+		return "HoSo [idHoSo=" + idHoSo + ", hoTen=" + hoTen + ", ngaySinh=" + ngaySinh + ", email=" + email + ", sdt="
+				+ sdt + ", cv=" + cv + ", noiDungUngTuyen=" + noiDungUngTuyen + ", idUser=" + idUser + ", idViecLam="
+				+ idViecLam + ", viecLam=" + viecLam + ", ungTuyen=" + ungTuyen + "]";
 	}
+
+	
 	
 	
 	

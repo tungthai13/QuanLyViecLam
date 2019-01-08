@@ -11,6 +11,8 @@ import com.mysql.jdbc.Connection;
 import com.mysql.jdbc.PreparedStatement;
 
 import model.HoSo;
+import model.TrangThaiUngTuyen;
+import model.UngTuyen;
 import model.ViecLam;
 import utility.DBConnection;
 
@@ -233,6 +235,34 @@ Connection con;
 	            }
 	        }
 	    }
+	  
+	  public List<TrangThaiUngTuyen> tatCaHoSoUngTuyen(int idUser){
+			List<TrangThaiUngTuyen> list = new ArrayList<>();
+			
+			try {
+				con = DBConnection.getConnection();
+				String sql = "select vieclam.tieuDe,ungtuyen.trangThai from hosoungtuyen inner JOIN ungtuyen ON hosoungtuyen.idHoSo = ungtuyen.idHoSo inner join vieclam on hosoungtuyen.idViecLam = vieclam.idViecLam where hosoungtuyen.idUser = ?";
+				PreparedStatement pstm = (PreparedStatement) con.prepareStatement(sql);
+				pstm.setInt(1, idUser);
+				ResultSet rs = pstm.executeQuery();
+				TrangThaiUngTuyen trangthaiungtuyen;
+				while(rs.next()) {
+					trangthaiungtuyen = new TrangThaiUngTuyen();
+					
+					trangthaiungtuyen.setTieuDe(rs.getString("tieuDe"));
+					trangthaiungtuyen.setTrangThai(rs.getString("trangThai"));
+					list.add(trangthaiungtuyen);
+				
+				}
+				
+				return list;
+				
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+			
+			return null;
+	}
 	  
 	  
 }

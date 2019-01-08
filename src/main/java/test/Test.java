@@ -9,6 +9,7 @@ import com.mysql.jdbc.Connection;
 import com.mysql.jdbc.PreparedStatement;
 
 import dao.CongTyDAO;
+import dao.HoSoDAO;
 import dao.LoginDAO;
 import dao.NguoiDungDAO;
 import dao.TinTucDAO;
@@ -16,6 +17,7 @@ import dao.ViecLamDAO;
 import model.CongTy;
 import model.NguoiDung;
 import model.TinTuc;
+import model.TrangThaiUngTuyen;
 import model.ViecLam;
 import utility.DBConnection;
 
@@ -76,8 +78,8 @@ public class Test {
 		
 	}*/
 	
-		NguoiDung a = new NguoiDungDAO().getNguoiDungByUserName("ntlong0410");
-		System.out.println(a);
+		List<TrangThaiUngTuyen> list = new HoSoDAO().tatCaHoSoUngTuyen(0);
+		System.out.println(list);
 		
 	}
 
