@@ -41,6 +41,7 @@ public class suaHoSo extends HttpServlet {
 		String noiDungUngTuyen = request.getParameter("noiDungUngTuyen");
 		String idUser = request.getParameter("idUser");
 		String idViecLam = request.getParameter("idViecLam");
+		String trangThai = request.getParameter("trangThai");
 		
 		HoSo hoso = new HoSo();
 		
@@ -53,6 +54,7 @@ public class suaHoSo extends HttpServlet {
 		hoso.setNoiDungUngTuyen(noiDungUngTuyen);
 		hoso.setIdUser(Integer.parseInt(idUser));
 		hoso.setIdViecLam(Integer.parseInt(idViecLam));
+		hoso.setTrangThai(trangThai);
 		
 		new HoSoDAO().suaHoSo(hoso);
 		request.getRequestDispatcher("quanlyhoso.jsp").forward(request, response);

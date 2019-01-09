@@ -13,6 +13,7 @@ import dao.HoSoDAO;
 import dao.LoginDAO;
 import dao.NguoiDungDAO;
 import dao.TinTucDAO;
+import dao.UngTuyenDAO;
 import dao.ViecLamDAO;
 import model.CongTy;
 import model.NguoiDung;
@@ -78,8 +79,8 @@ public class Test {
 		
 	}*/
 	
-		List<TrangThaiUngTuyen> list = new HoSoDAO().tatCaHoSoUngTuyen(0);
-		System.out.println(list);
+		new UngTuyenDAO().themUngTuyen(6, 16, "Chưa Duyệt");
+		System.out.println("a");
 		
 	}
 

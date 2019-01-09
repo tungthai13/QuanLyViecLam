@@ -340,4 +340,8 @@
 		<servlet-name>theoDoiTrangThaiUngTuyen</servlet-name>
 		<url-pattern>/theoDoiTrangThaiUngTuyen</url-pattern>
 	</servlet-mapping>
+	<welcome-file-list>
+    <welcome-file>trangchu.jsp</welcome-file>
+</welcome-file-list>
 </web-app>
+

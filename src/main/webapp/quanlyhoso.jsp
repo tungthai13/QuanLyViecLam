@@ -74,6 +74,7 @@
                                         <th>Nội dung ứng tuyển</th>
                                         <th>Id người dùng</th>
                                         <th>Id việc làm</th>
+                                        <th>Trạng Thái</th>
                                         <th>Sửa</th>
                                         <th>Xóa</th>
                                     </tr>
@@ -95,6 +96,7 @@
                                        	<td><%=hoso.getNoiDungUngTuyen() %></td>
                                        	<td><%=hoso.getIdUser() %></td>
                                        	<td><%=hoso.getIdViecLam() %></td>
+                                       	<td><%=hoso.getTrangThai() %></td>
 										<td><a href="suahoso.jsp?idHoSo=<%=hoso.getIdHoSo()%>">Sửa</a></td>
                                         <td><a href="xoaHoSo?idHoSo=<%=hoso.getIdHoSo()%>">Xóa</a></td>
                                     </tr>

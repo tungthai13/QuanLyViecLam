@@ -106,6 +106,12 @@
                                             <input type="float" required value="<%=hoso.getIdViecLam() %>"  name="idViecLam" class="form-control">
 
                                         </div>
+                                         <div class="form-group">
+                                            <label>Trạng thái</label>
+                                            <input type="text" required value="<%=hoso.getTrangThai() %>"  name="trangThai" class="form-control">
+
+                                        </div>
+                                        
 
                                         <button type="submit" class="btn btn-default">Sửa</button>
 

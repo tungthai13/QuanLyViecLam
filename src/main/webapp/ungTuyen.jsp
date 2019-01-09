@@ -27,7 +27,12 @@
                                 
                                     %>
 			
-				  <form method="POST" action="ungTuyenKhongDangNhap" >    
+				  <form method="POST" action="ungTuyenKhongDangNhap" > 
+				  						<div class="form-group">
+                                           
+                                            <input minlength="5" type="hidden" value="<%=idViecLam %>" name="idViecLam" class="form-control">
+
+                                        </div>      
 				  						<div class="form-group">
                                            
                                             <input minlength="5" type="hidden" value="<%=idViecLam %>" name="idViecLam" class="form-control">

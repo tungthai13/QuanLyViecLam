@@ -92,6 +92,11 @@
                                             <input type="float" required name="idViecLam" class="form-control">
 
                                         </div>
+                                         <div class="form-group">
+                                            <label>Trạng Thái</label>
+                                            <input type="text" required name="trangThai" class="form-control">
+
+                                        </div>
 
                                         <button type="submit" class="btn btn-default">Thêm</button>
 

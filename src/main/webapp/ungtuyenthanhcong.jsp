@@ -1,3 +1,5 @@
+<%@page import="dao.UngTuyenDAO"%>
+<%@page import="model.HoSo"%>
 <%@page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -18,6 +20,9 @@
 </head>
 <body>
 <!--header start here-->
+
+
+
 <div class="header">
 		<div class="header-main">
 		       <h1 style="color:green"><blink>Ứng tuyển thành công</blink></h1>

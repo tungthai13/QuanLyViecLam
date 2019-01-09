@@ -1,3 +1,8 @@
 eclipse.preferences.version=1
+encoding//src/main/java/controller/ungTuyen.java=UTF-8
+encoding//src/main/java/controller/ungTuyenKhongDangNhap.java=UTF-8
+encoding//src/main/java/dao/HoSoDAO.java=UTF-8
+encoding//src/main/java/dao/UngTuyenDAO.java=UTF-8
+encoding//src/main/java/test/Test.java=UTF-8
 encoding//src/main/webapp/thanhcong.jsp=UTF-8
 encoding//src/main/webapp/trangcanhan.jsp=UTF-8

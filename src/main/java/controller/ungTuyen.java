@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import dao.HoSoDAO;
+import dao.UngTuyenDAO;
 import model.HoSo;
 import model.NguoiDung;
 
@@ -38,11 +39,12 @@ public class ungTuyen extends HttpServlet {
 		HttpSession session = request.getSession();
 		NguoiDung user = (NguoiDung) session.getAttribute("user");
 		
-		System.out.println(user.getNgaySinh());
+		
 		String idViecLam = request.getParameter("idViecLam");
 		
 		HoSo hoso = new HoSo();
 		
+
 		hoso.setHoTen(user.getHoTen());
 		hoso.setNgaySinh(user.getNgaySinh());
 		hoso.setEmail(user.getEmail());
@@ -50,9 +52,13 @@ public class ungTuyen extends HttpServlet {
 		hoso.setCv(user.getCv());
 		hoso.setNoiDungUngTuyen(user.getViTriUngTuyen());
 		hoso.setIdUser(user.getIdUser());
-		hoso.setIdViecLam(Integer.parseInt(idViecLam));
+		hoso.setIdViecLam(Integer.parseInt(idViecLam));	
 		
 		new HoSoDAO().ungTuyenCoDangNhap(hoso);
+		
+	
+
+		
 		request.getRequestDispatcher("ungtuyenthanhcong.jsp").forward(request, response);
 	}
 

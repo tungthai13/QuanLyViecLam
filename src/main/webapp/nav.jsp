@@ -80,7 +80,7 @@
                             <ul class="nav nav-second-level">
                             
                             <%
-                            if(admin.getQuyen().equals("admin") || equals("hr")){
+                            if(admin.getQuyen().equals("admin") || admin.getQuyen().equals("hr")){
                             	
                             
                             %>
@@ -90,7 +90,7 @@
                                 </li>
                                 <% } %>
                                 <%
-                                if(admin.getQuyen().equals("admin")|| equals("marketing")){
+                                if(admin.getQuyen().equals("admin")|| admin.getQuyen().equals("tintuc")){
                                
                                 %>
                                 <li>
@@ -100,22 +100,48 @@
                                 <% } %>
                                 
                                 
+                                <%
+                                if(admin.getQuyen().equals("admin") || admin.getQuyen().equals("congty") || admin.getQuyen().equals("hr")){
+                                	
+                                
+                                %>
                                 <li>
                                     <a href="quanlyhoso.jsp"><i
 							class="fas fa-address-book" style="margin-right:5px"></i>Hồ sơ</a>
                                 </li>
+                                <% } %>
+                                
+                                <%
+                                if(admin.getQuyen().equals("admin") || admin.getQuyen().equals("hr")){
+                                	
+                                
+                                %>
                                 <li>
                                     <a href="quanlynguoidung.jsp"><i
 							class="fas fa-user-tie" style="margin-right:5px"></i>Người dùng</a>
                                 </li>
+                                <% } %>
+                                
+                                <%
+                                if(admin.getQuyen().equals("admin") || admin.getQuyen().equals("congty")){
+                                	                              
+                                %>
                                 <li>
                                     <a href="quanlycongty.jsp"><i
 							class="fas fa-building" style="margin-right:5px"></i>Công ty</a>
                                 </li>
+                                <% } %>
+                                
+                                <%
+                                if(admin.getQuyen().equals("admin")){
+                                	
+                                
+                                %>
                                 <li>
                                     <a href="quanlyadmin.jsp"><i
 							class="fas fa-user-shield" style="margin-right:5px"></i>Admin</a>
                                 </li>
+                                <% } %>
                                 
                             </ul>
                         </li>

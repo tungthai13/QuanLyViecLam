@@ -40,6 +40,7 @@ Connection con;
 				hoso.setNoiDungUngTuyen(rs.getString("noiDungUngTuyen"));
 				hoso.setIdUser(rs.getInt("idUser"));
 				hoso.setIdViecLam(rs.getInt("idViecLam"));
+				hoso.setTrangThai(rs.getString("trangThai"));
 				list.add(hoso);
 			}
 			
@@ -73,6 +74,7 @@ Connection con;
 					hoso.setNoiDungUngTuyen(rs.getString("noiDungUngTuyen"));
 					hoso.setIdUser(rs.getInt("idUser"));
 					hoso.setIdViecLam(rs.getInt("idViecLam"));
+					hoso.setTrangThai(rs.getString("trangThai"));
 	            }
 	            
 	            return hoso;
@@ -94,7 +96,7 @@ Connection con;
 	        try {
 	            int result = 0;
 	            con = DBConnection.getConnection();
-	            String sql = "insert into hosoungtuyen (hoTen, ngaySinh, email, sdt, cv, noiDungUngTuyen,idUser,idViecLam) values (?,?,?,?,?,?,?,?)";
+	            String sql = "insert into hosoungtuyen (hoTen, ngaySinh, email, sdt, cv, noiDungUngTuyen,idUser,idViecLam,trangThai) values (?,?,?,?,?,?,?,?,?)";
 	            PreparedStatement pstmt = (PreparedStatement) con.prepareStatement(sql);
 	            pstmt.setString(1, h.getHoTen());
 	            pstmt.setDate(2, h.getNgaySinh());
@@ -104,6 +106,7 @@ Connection con;
 	            pstmt.setString(6, h.getNoiDungUngTuyen());
 	            pstmt.setInt(7, h.getIdUser());
 	            pstmt.setInt(8, h.getIdViecLam()); 
+	            pstmt.setString(9,h.getTrangThai());
 	            int rs = pstmt.executeUpdate();
 	            
 	            return rs>0;
@@ -148,7 +151,7 @@ Connection con;
 	        try {
 	            int result = 0;
 	            con = DBConnection.getConnection();
-	            String sql = "update  hosoungtuyen set hoTen = ?, ngaySinh = ?, email = ?, sdt = ?, cv = ?, noiDungUngTuyen = ?,idUser=?,idViecLam=? where idHoSo = ?";
+	            String sql = "update  hosoungtuyen set hoTen = ?, ngaySinh = ?, email = ?, sdt = ?, cv = ?, noiDungUngTuyen = ?,idUser=?,idViecLam=?,trangThai=? where idHoSo = ?";
 	            PreparedStatement pstmt = (PreparedStatement) con.prepareStatement(sql);
 	            
 	            pstmt.setString(1, h.getHoTen());
@@ -159,7 +162,8 @@ Connection con;
 	            pstmt.setString(6, h.getNoiDungUngTuyen());
 	            pstmt.setInt(7, h.getIdUser());
 	            pstmt.setInt(8, h.getIdViecLam()); 
-	            pstmt.setInt(9, h.getIdHoSo());
+	            pstmt.setString(9, h.getTrangThai());
+	            pstmt.setInt(10, h.getIdHoSo());
 	            
 	           
 	            
@@ -182,7 +186,7 @@ Connection con;
 	        try {
 	            int result = 0;
 	            con = DBConnection.getConnection();
-	            String sql = "insert into hosoungtuyen (hoTen, ngaySinh, email, sdt, cv, noiDungUngTuyen,idUser,idViecLam) values (?,?,?,?,?,?,?,?)";
+	            String sql = "insert into hosoungtuyen (hoTen, ngaySinh, email, sdt, cv, noiDungUngTuyen,idUser,idViecLam,trangThai) values (?,?,?,?,?,?,?,?,?)";
 	            PreparedStatement pstmt = (PreparedStatement) con.prepareStatement(sql);
 	            pstmt.setString(1, h.getHoTen());
 	            pstmt.setDate(2, h.getNgaySinh());
@@ -192,6 +196,7 @@ Connection con;
 	            pstmt.setString(6, h.getNoiDungUngTuyen());
 	            pstmt.setInt(7, 0);
 	            pstmt.setInt(8, h.getIdViecLam()); 
+	            pstmt.setString(9,"Chưa Duyệt");
 	            int rs = pstmt.executeUpdate();
 	            
 	            return rs>0;
@@ -211,7 +216,7 @@ Connection con;
 	        try {
 	            int result = 0;
 	            con = DBConnection.getConnection();
-	            String sql = "insert into hosoungtuyen (hoTen, ngaySinh, email, sdt, cv, noiDungUngTuyen,idUser,idViecLam) values (?,?,?,?,?,?,?,?)";
+	            String sql = "insert into hosoungtuyen (hoTen, ngaySinh, email, sdt, cv, noiDungUngTuyen,idUser,idViecLam,trangThai) values (?,?,?,?,?,?,?,?,?)";
 	            PreparedStatement pstmt = (PreparedStatement) con.prepareStatement(sql);
 	            pstmt.setString(1, h.getHoTen());
 	            pstmt.setDate(2, h.getNgaySinh());
@@ -221,6 +226,7 @@ Connection con;
 	            pstmt.setString(6, h.getNoiDungUngTuyen());
 	            pstmt.setInt(7, h.getIdUser());
 	            pstmt.setInt(8, h.getIdViecLam()); 
+	            pstmt.setString(9,"Chưa Duyệt");
 	            int rs = pstmt.executeUpdate();
 	            
 	            return rs>0;
@@ -241,7 +247,7 @@ Connection con;
 			
 			try {
 				con = DBConnection.getConnection();
-				String sql = "select vieclam.tieuDe,ungtuyen.trangThai from hosoungtuyen inner JOIN ungtuyen ON hosoungtuyen.idHoSo = ungtuyen.idHoSo inner join vieclam on hosoungtuyen.idViecLam = vieclam.idViecLam where hosoungtuyen.idUser = ?";
+				String sql = "select vieclam.tieuDe,hosoungtuyen.trangThai from hosoungtuyen inner join vieclam on hosoungtuyen.idViecLam = vieclam.idViecLam where hosoungtuyen.idUser = ?";
 				PreparedStatement pstm = (PreparedStatement) con.prepareStatement(sql);
 				pstm.setInt(1, idUser);
 				ResultSet rs = pstm.executeQuery();

@@ -9,6 +9,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import dao.HoSoDAO;
+import dao.UngTuyenDAO;
 import model.HoSo;
 
 /**
@@ -50,6 +51,7 @@ public class ungTuyenKhongDangNhap extends HttpServlet {
 		hoso.setIdViecLam(Integer.parseInt(idViecLam));
 		
 		new HoSoDAO().ungTuyen(hoso);
+		
 		request.getRequestDispatcher("ungtuyenthanhcong.jsp").forward(request, response);
 	}
 

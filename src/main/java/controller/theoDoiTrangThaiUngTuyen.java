@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import dao.HoSoDAO;
+import model.HoSo;
 import model.NguoiDung;
 import model.TrangThaiUngTuyen;
 
