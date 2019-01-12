@@ -1,6 +1,8 @@
 package controller;
 
 import java.io.IOException;
+import java.sql.Date;
+
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -52,6 +54,7 @@ public class suaThongTinCaNhan extends HttpServlet {
 		String kinhNghiemCongTac = request.getParameter("kinhNghiemCongTac");
 		String ghiChu = request.getParameter("ghiChu");
 		String cv = request.getParameter("cv");
+		String ngaySinh = request.getParameter("ngaySinh");
 	
 		user.setIdUser(Integer.parseInt(idUser));
 		user.setHoTen(hoTen);
@@ -71,6 +74,7 @@ public class suaThongTinCaNhan extends HttpServlet {
 		user.setKinhNghiemCongTac(kinhNghiemCongTac);
 		user.setGhiChu(ghiChu);
 		user.setCv(cv);
+		user.setNgaySinh(Date.valueOf(ngaySinh));
 		
 		
 		new NguoiDungDAO().suaNguoiDung(user);

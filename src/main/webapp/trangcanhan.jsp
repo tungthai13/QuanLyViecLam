@@ -70,7 +70,7 @@
 				</button>
 
 				<div class="navbar-header pull-left">
-					<a href="index.html" class="navbar-brand">
+					<a href="trangCaNhan" class="navbar-brand">
 						<small>
 							<i class="fa fa-leaf"></i>
 							Thông tin cá nhân
@@ -294,6 +294,13 @@
 											<button class="btn btn-info" type="button">
 											<a style="color:white" href="theoDoiTrangThaiUngTuyen?idUser=<%=user.getIdUser() %>"><i class="fas fa-wrench"></i>
 												Theo dõi trạng thái ứng tuyển</a>
+												
+											</button>
+											
+											&nbsp; &nbsp; &nbsp;
+											<button class="btn btn-info" type="button">
+											<a style="color:white" href="trangchu.jsp"><i class="fas fa-wrench"></i>
+												Quay lại trang chủ</a>
 												
 											</button>
 										</div>

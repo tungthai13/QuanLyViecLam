@@ -25,19 +25,14 @@
                      <label for="password">Password</label>
                      <input class="form-control" id="password" name="password" type="password" placeholder="Enter Password">
                   </div>
-                  <div class="form-group">
-                     <div class="form-check">
-                        <label class="form-check-label">
-                        <input class="form-check-input" type="checkbox" name="remember-me"> Remember Password</label>
-                     </div>
-                  </div>
+                 
                   <input type="hidden" name="" value="">
                   <input type="submit" class="btn btn-primary btn-block" value="Login">
                </form>
               
                <div class="text-center">
                   <a class="d-block small mt-3" href="dangky.jsp">Register an Account</a>
-                  <a class="d-block small" href="quenmatkhau.jsp">Forgot Password?</a>
+            
                </div>
             </div>
          </div>

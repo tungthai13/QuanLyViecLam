@@ -41,6 +41,8 @@
                 <a class="navbar-brand" href="quanly.jsp">Admin</a>
             </div>
             <!-- /.navbar-header -->
+            
+            
 
           <div style="margin-top:15px" class="navbar-buttons navbar-header pull-right" role="navigation" >
           
@@ -80,7 +82,7 @@
                             <ul class="nav nav-second-level">
                             
                             <%
-                            if(admin.getQuyen().equals("admin") || admin.getQuyen().equals("hr")){
+                            if(admin.getQuyen().equals("admin") || admin.getQuyen().equals("hr") || admin.getQuyen().equals("congty")){
                             	
                             
                             %>

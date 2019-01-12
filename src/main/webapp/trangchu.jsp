@@ -67,13 +67,13 @@
 
 		<div class="carousel-inner">
 			<div class="carousel-item active">
-				<img src="resources/abc2.jpg" alt="Messi">
+				<img src="resources/abc3.jpg" alt="Messi">
 			</div>
 			<div class="carousel-item">
 				<img src="resources/abc1.jpg" alt="Messi 2">
 			</div>
 			<div class="carousel-item">
-				<img src="resources/abc3.jpg" alt="Hạ Long">
+				<img src="resources/abc2.jpg" alt="Hạ Long">
 			</div>
 		</div>
 
@@ -137,8 +137,8 @@
 		<!-- /.row -->
 
 		<!-- Portfolio Section -->
-		<h2>Hồ sơ mới</h2>
-
+		<!-- <h2>Hồ sơ mới</h2 -->>
+<!-- 
 		<div class="row">
 			<div class="col-lg-4 col-sm-6 portfolio-item">
 				<div class="card h-50">
@@ -186,7 +186,7 @@
 
 					</div>
 				</div>
-			</div>
+			</div> -->
 
 
 			<div class="row" style="margin-top: 30px">
@@ -221,7 +221,7 @@
 
 
 
-		</div>
+		</div> 
 
 	</div>
 

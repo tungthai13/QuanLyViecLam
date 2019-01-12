@@ -61,7 +61,7 @@ public class dangNhapQuanTri extends HttpServlet {
 				request.getRequestDispatcher("nav.jsp").forward(request, response);
 			}
 			if (admin == null) {
-				request.getRequestDispatcher("error.jsp").forward(request, response);
+				request.getRequestDispatcher("loidangnhap.jsp").forward(request, response);
 			}
 			return;
 		} catch (Exception e) {
@@ -104,7 +104,7 @@ public class dangNhapQuanTri extends HttpServlet {
 				request.getRequestDispatcher("quanly.jsp").forward(request, response);
 			}
 			if (admin == null) {
-				request.getRequestDispatcher("error.jsp").forward(request, response);
+				request.getRequestDispatcher("loidangnhap.jsp").forward(request, response);
 			}
 			return;
 		} catch (Exception e) {

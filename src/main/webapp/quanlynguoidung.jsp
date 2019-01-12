@@ -84,8 +84,9 @@
                                         <th>Kinh nghiệm công tác</th>
                                         <th>Ghi chú </th>
                                         <th>CV</th>
+                                        
 
-                                        <th>Sửa</th>
+                                       <!--  <th>Sửa</th> -->
                                         <th>Xóa</th>
                                     </tr>
                                 </thead>
@@ -117,7 +118,8 @@
                                         <td><%=nguoidung.getKinhNghiemCongTac() %></td>
                                        	<td><%=nguoidung.getGhiChu() %></td>
                                         <td><%=nguoidung.getCv() %></td>
-										<td><a href="suanguoidung.jsp?idUser=<%=nguoidung.getIdUser()%>">Sửa</a></td>
+                                        
+										<%-- <td><a href="suanguoidung.jsp?idUser=<%=nguoidung.getIdUser()%>">Sửa</a></td> --%>
                                         <td><a href="xoaNguoiDung?idUser=<%=nguoidung.getIdUser()%>">Xóa</a></td>
                                     </tr>
                                     <%

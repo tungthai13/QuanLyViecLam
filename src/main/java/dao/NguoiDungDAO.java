@@ -180,7 +180,7 @@ Connection con;
 	        try {
 	            int result = 0;
 	            con = DBConnection.getConnection();
-	            String sql = "update  nguoidung set hoTen = ?, email = ?, sdt = ?, phanQuyen = ?, viTriUngTuyen =?, anh =?, skype=?, facebook=?,queQuan=?,hocVan=?,truong=?,khoa=?,namTotNghiep=?,kyNang=?,kinhNghiemCongTac=?,ghiChu=?,cv=? where idUser = ?";
+	            String sql = "update  nguoidung set hoTen = ?, email = ?, sdt = ?, phanQuyen = ?, viTriUngTuyen =?, anh =?, skype=?, facebook=?,queQuan=?,hocVan=?,truong=?,khoa=?,namTotNghiep=?,kyNang=?,kinhNghiemCongTac=?,ghiChu=?,cv=?,ngaySinh=? where idUser = ?";
 	            PreparedStatement pstmt = (PreparedStatement) con.prepareStatement(sql);
 	            
 	           
@@ -201,7 +201,8 @@ Connection con;
 	            pstmt.setString(15, n.getKinhNghiemCongTac());
 	            pstmt.setString(16, n.getGhiChu());
 	            pstmt.setString(17, n.getCv());
-	            pstmt.setInt(18, n.getIdUser());
+	            pstmt.setDate(18, n.getNgaySinh());
+	            pstmt.setInt(19, n.getIdUser());
 	           
 	            
 	            int rs = pstmt.executeUpdate();

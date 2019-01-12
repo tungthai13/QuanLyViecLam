@@ -6,7 +6,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 
-<%@ page session="false" %>
+<%@ page session="false"%>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
 <html>
@@ -30,7 +30,7 @@
 
 <body style="margin-top: 30px">
 
-	<%@ include file="header.jsp" %>
+	<%@ include file="header.jsp"%>
 
 	<div class="container" style="margin-top:10px">
 
@@ -137,7 +137,7 @@
 		</div>
 	</div>
 		
-	 <%@ include file="footer.jsp" %>
+	 
 
 			<script>
 </script>

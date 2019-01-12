@@ -20,14 +20,14 @@
 <!--header start here-->
 <div class="header">
 		<div class="header-main">
-		       <h1 style="color:red"><blink>Đăng ký thất bại</blink></h1>
+		       <h1 style="color:red"><blink>Thất bại</blink></h1>
 				<div class="header-bottom">
 				<div class="header-right w3agile">
 					
 					<div class="header-left-bottom agileinfo">
 						
 					 <form action="dangky.jsp">
-					<input type="submit" value="Quay lại trang đăng ký">
+					<input type="submit" value="Quay lại">
 					</form>	
 				
 					

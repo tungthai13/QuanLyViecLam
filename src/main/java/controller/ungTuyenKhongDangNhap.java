@@ -52,7 +52,12 @@ public class ungTuyenKhongDangNhap extends HttpServlet {
 		
 		new HoSoDAO().ungTuyen(hoso);
 		
-		request.getRequestDispatcher("ungtuyenthanhcong.jsp").forward(request, response);
+		
+		if(hoTen == null ||ngaySinh == null || email == null || sdt == null || noiDungUngTuyen == null) {
+			request.getRequestDispatcher("ungtuyenkhongthanhcong.jsp").forward(request, response);;
+		}else {
+			request.getRequestDispatcher("ungtuyenthanhcong.jsp").forward(request, response);
+		}
 	}
 
 	/**

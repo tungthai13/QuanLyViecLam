@@ -34,7 +34,7 @@
 
 	<div class="container">
 
-		<h1 class="mt-4 mb-3">Danh sách việc làm</h1>
+		<h1 class="mt-4 mb-3">Danh sách việc làm tìm thấy</h1>
 
 		<ol class="breadcrumb">
 			<li class="breadcrumb-item"><a href="trangchu.jsp">Home</a></li>
@@ -77,24 +77,12 @@
 
 		</div>
 		<!-- Pagination -->
-		<ul class="pagination justify-content-center">
-			<li class="page-item"><a class="page-link" href="#"
-				aria-label="Previous"> <span aria-hidden="true">&laquo;</span> <span
-					class="sr-only">Previous</span>
-			</a></li>
-			<li class="page-item"><a class="page-link" href="#">1</a></li>
-			<li class="page-item"><a class="page-link" href="#">2</a></li>
-			<li class="page-item"><a class="page-link" href="#">3</a></li>
-			<li class="page-item"><a class="page-link" href="#"
-				aria-label="Next"> <span aria-hidden="true">&raquo;</span> <span
-					class="sr-only">Next</span>
-			</a></li>
-		</ul>
+	
 
 	</div>
 
 
-	<%@ include file="footer.jsp"%>
+	
 
 
 	<script>

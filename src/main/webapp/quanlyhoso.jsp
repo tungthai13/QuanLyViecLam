@@ -83,7 +83,7 @@
                                  <%
                                  List<HoSo>  list =  new HoSoDAO().tatCaHoSo();
                                 for(HoSo hoso : list){
-                                     
+                                     	
                                 
                                     %>
                                     <tr class="odd gradeX">

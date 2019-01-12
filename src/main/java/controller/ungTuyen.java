@@ -54,12 +54,20 @@ public class ungTuyen extends HttpServlet {
 		hoso.setIdUser(user.getIdUser());
 		hoso.setIdViecLam(Integer.parseInt(idViecLam));	
 		
-		new HoSoDAO().ungTuyenCoDangNhap(hoso);
+		
 		
 	
 
 		
-		request.getRequestDispatcher("ungtuyenthanhcong.jsp").forward(request, response);
+		
+		if(user.getHoTen() == null || user.getNgaySinh() == null || user.getEmail() == null || user.getSdt() == 0 || user.getViTriUngTuyen() == null) {
+			request.getRequestDispatcher("ungtuyenkhongthanhcong.jsp").forward(request, response);;
+		}else {
+			new HoSoDAO().ungTuyenCoDangNhap(hoso);
+			request.getRequestDispatcher("ungtuyenthanhcong.jsp").forward(request, response);
+			
+			
+		}
 	}
 
 	/**

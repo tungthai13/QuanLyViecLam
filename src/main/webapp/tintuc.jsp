@@ -1,3 +1,5 @@
+<%@page import="dao.ViecLamDAO"%>
+<%@page import="model.ViecLam"%>
 <%@page import="model.TinTuc"%>
 <%@page import="java.util.List"%>
 <%@page import="dao.TinTucDAO"%>
@@ -82,28 +84,48 @@
         
 
         <!-- Sidebar Widgets Column -->
-        <div class="col-lg-4">
+       <div class="col-md-4">
 
-          <!-- Search Widget -->
-          <div class="card mb-4">
-            <h5 class="card-header">Tuyển dụng hấp dẫn</h5>
-            <div class="card-body">
-              <p></p>
-            </div>
-          </div>
+				<div class="card mb-4">
+					<h5 class="card-header">Việc làm mới</h5>
+					<table>
+						<tbody>
+						<%
+					List<ViecLam>  list2 =  new ViecLamDAO().top8ViecLam();
+					 for(ViecLam vieclam : list2){
+	%>
+							<tr class="mt-4 mb-3" style="margin-top:10px">
+								<td><a href="chitietvieclam?id=<%=vieclam.getIdViecLam() %>"><%=vieclam.getTieuDe()%></a></td>
+								<tr></tr>
+							</tr>
+							
+							<%} %>
+						</tbody>
+					</table>
+				</div>
+				
+				<div class="card mb-4">
+					<h5 class="card-header">Tin tức mới</h5>
+					<table>
+						<tbody>
+						<%
+					List<TinTuc>  list1 =  new TinTucDAO().top8TinTuc();
+					 for(TinTuc tintuc : list1){
+					%>
+							<tr class="mt-4 mb-3" style="margin-top:10px">
+								<td><a href="chitiettintuc?id=<%=tintuc.getIdTinTuc() %>"><%=tintuc.getTieuDe() %></a></td>
+								<tr></tr>
+							</tr>
+							<%} %>
+						</tbody>
+					</table>
+				</div>
 
-          <!-- Categories Widget -->
-          <div class="card my-4">
-            <h5 class="card-header">Hồ sơ hot</h5>
-            <div class="card-body">
-              <div class="row">
-                
-               
-              </div>
-            </div>
-          </div>
-        
-	</div>
+
+				
+
+		
+			</div>
 </div>
 </div>
 
@@ -111,13 +133,8 @@
 
 	<!-- /.container -->
 
-  <!-- Footer -->
-  <footer class="py-5 bg-dark">
-    <div class="container">
-      <p class="m-0 text-center text-white">Smartweb</p>
-    </div>
-    <!-- /.container -->
-  </footer>
+  
+  
 <script>
 
 	</script>

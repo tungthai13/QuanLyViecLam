@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <html lang="en">
    <head>
-<title>Quản tri</title>
+<title>Thất bại</title>
 <script src="js/jquery.min.js"></script>
 <!-- Custom Theme files -->
 <link href="css/style.css" rel="stylesheet" type="text/css" media="all"/>
@@ -20,26 +20,16 @@
 <!--header start here-->
 <div class="header">
 		<div class="header-main">
-		       <h1><blink>Đăng nhập quản trị</blink></h1>
-			<div class="header-bottom">
+		       <h1 style="color:red"><blink>Ứng tuyển không thành công</blink></h1>
+				<div class="header-bottom">
 				<div class="header-right w3agile">
 					
 					<div class="header-left-bottom agileinfo">
 						
-					 <form action="dangNhapQuanTri" method="post">
-						<input type="text"  value="Tên đăng nhập" name="userName" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'User name';}"/>
-						<input type="password"  value="Mật khẩu" name="password" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'password';}"/>
-						<div class="remember">
-			             <span class="checkbox1">
-							   <label class="checkbox"><input type="checkbox" name="" checked=""><i> </i>Remember me</label>
-						 </span>
-						 
-						<div class="clear"> </div>
-					  </div>
-					   
-						<input type="submit" value="Login">
+					 <form action="trangchu.jsp">
+					<input type="submit" value="Quay lại trang chủ">
 					</form>	
-					
+				
 					
 						
 				</div>

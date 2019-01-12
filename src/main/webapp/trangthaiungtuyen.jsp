@@ -71,7 +71,7 @@
 				</button>
 
 				<div class="navbar-header pull-left">
-					<a href="index.html" class="navbar-brand">
+					<a href="trangCaNhan" class="navbar-brand">
 						<small>
 							<i class="fa fa-leaf"></i>
 							Thông tin cá nhân
@@ -88,7 +88,7 @@
 							<a data-toggle="dropdown" href="#" class="dropdown-toggle">
 								<img class="nav-user-photo" src="assets/images/avatars/profile-pic.jpg" alt="" />
 								<span class="user-info">
-									<small>Welcome,<%=user.getHoTen() %></small>
+									<small>Welcome,<%=user.getUserName() %></small>
 									
 								</span>
 

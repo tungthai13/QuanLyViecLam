@@ -87,7 +87,7 @@ public class dangnhap extends HttpServlet {
 			}
 			
 			if (user == null) {
-				request.getRequestDispatcher("error.jsp").forward(request, response);
+				request.getRequestDispatcher("loidangnhap1.jsp").forward(request, response);
 			}
 			
 
